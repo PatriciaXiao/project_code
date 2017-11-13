@@ -226,7 +226,7 @@ def run(session,
                 sum_loss += batch_loss
                 if step % report_loss_interval == 0:
                     average_loss = sum_loss / min(report_loss_interval, step+1)
-                    print ('Average loss at step %d: %f' % (step, average_loss))
+                    print ('Average loss at step (%d/%d): %f' % (step, n_step, average_loss))
                     sum_loss = 0
                 if step % report_score_interval == 0:
                     auc = calc_score(m)
@@ -236,7 +236,8 @@ def run(session,
         elif option == 'epoch':
             steps_per_epoch = train_batchgen.data_size//train_batchgen.batch_size
             for epoch in range(n_epoch):
-                print ('Start epoch %d' % epoch)
+                print ('Start epoch (%d/%d)' % (epoch, n_epoch))
+                sum_loss = 0
                 for step in range(steps_per_epoch):
                     batch_Xs, batch_Ys, batch_labels, batch_sequence_lengths = train_batchgen.next_batch()
                     feed_dict = {m.Xs : batch_Xs, m.Ys : batch_Ys, 
@@ -245,14 +246,14 @@ def run(session,
                     sum_loss += batch_loss
                     if step % report_loss_interval == 0:
                         average_loss = sum_loss / min(report_loss_interval, step+1)
-                        print ('Average loss at step %d: %f' % (step, average_loss))
+                        print ('Average loss at step (%d/%d): %f' % (step, steps_per_epoch, average_loss))
                         sum_loss = 0
                     if step % report_score_interval == 0:
-                        auc = calc_score()
+                        auc = calc_score(m)
                         print('AUC score: {}'.format(auc))   
                         save_path = m.saver.save(session, model_saved_path)
                         print('Model saved in {}'.format(save_path))
-                print ('End epoch %d' % epoch)
+                print ('End epoch (%d/%d)' % (epoch, n_epoch))
                 auc = calc_score(m)
                 print('AUC score: {}'.format(auc))   
                 save_path = m.saver.save(session, model_saved_path)
@@ -260,7 +261,7 @@ def run(session,
     pass
 
 batch_size = 16
-n_epoch = 0
+n_epoch = 5
 n_step = 1001
 
 PrepData = IO()
@@ -276,5 +277,6 @@ train_batches = BatchGenerator(train_response_list, batch_size, id_encoding)
 test_batches = BatchGenerator(test_response_list, batch_size, id_encoding)
 
 sess = tf.Session()
-run(sess, train_batches, test_batches, option='step', n_step=n_step)
+# run(sess, train_batches, test_batches, option='step', n_step=n_step)
+run(sess, train_batches, test_batches, option='epoch', n_epoch=n_epoch)
 sess.close()
