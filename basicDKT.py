@@ -45,12 +45,12 @@ class IO:
                 seq_correctness = csvreader.read_next_line()
                 seq_length = int(seq_length_line[0])
                 assert len(seq_length_line) == 1 and seq_length == len(seq_questionsID) and seq_length == len(seq_correctness), \
-                    "Unexpected format of input CSV file\n"
+                    "Unexpected format of input CSV file in {0}\n".format(filename)
                 if seq_length > 1: # only when there are at least two questions together is the sequence meaningful
                     question_list += [question for question in set(seq_questionsID) if question not in question_list]
                     response_list.append((seq_length, list(zip(map(int, seq_questionsID), map(int, seq_correctness)))))
             except StopIteration:
-                print "reached the end of the file {0}\n".format(filename)
+                print ("reached the end of the file {0}".format(filename))
                 break
         del csvreader
         return response_list, question_list
@@ -117,7 +117,7 @@ class basicDKTModel:
         Xs = tf.placeholder(tf.int32, shape=[batch_size, None], name='Xs_input')
         Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length], name='Ys_input')
         targets = tf.placeholder(tf.float32, shape=[batch_size, None], name='targets_input')
-        sequence_length = tf.placeholder(tf.int32, shape=[batch_size], name='sequence_ength_input')
+        sequence_length = tf.placeholder(tf.int32, shape=[batch_size], name='sequence_length_input')
 
         # Global parameters initialized
         global_step = tf.Variable(0, trainable=False, name='global_step')
@@ -135,14 +135,14 @@ class basicDKTModel:
         outputs, state = tf.nn.dynamic_rnn(cell, inputsX, sequence_length, initial_state=initial_state)
         if keep_prob != 1:
             outputs = tf.nn.dropout(outputs, keep_prob)
-        outputs_flat = tf.reshape(outputs,shape=[-1, n_hidden])
-        logits = tf.reshape(tf.nn.xw_plus_b(outputs_flat, w, b), shape=[batch_size,-1,vec_length])
+        outputs_flat = tf.reshape(outputs,shape=[-1, n_hidden], name='Outputs')
+        logits = tf.reshape(tf.nn.xw_plus_b(outputs_flat, w, b), shape=[batch_size,-1,vec_length], name='Y_Logits')
         pred = tf.reduce_max(logits*Ys, axis=2)
         loss = tf.nn.sigmoid_cross_entropy_with_logits(logits=pred, labels=targets)
         mask = tf.sign(tf.abs(pred))
         loss_masked = mask*loss
         loss_masked_by_s = tf.reduce_sum(loss_masked, axis=1)
-        mean_loss = tf.reduce_mean(loss_masked_by_s/tf.to_float(sequence_length))
+        mean_loss = tf.reduce_mean(loss_masked_by_s/tf.to_float(sequence_length), name='mean_loss')
 
         # Optimizer defined
         optimizer = tf.train.AdamOptimizer(
@@ -204,14 +204,15 @@ def run(session,
     steps_to_test = test_batchgen.data_size//train_batchgen.batch_size
     assert steps_to_test > 0, "Test set too small"
     def calc_score(m):
-        auc = 0
+        auc_sum = 0.
         test_batchgen.reset()
         for i in range(steps_to_test):
             test_batch_Xs, test_batch_Ys, test_batch_labels, test_batch_sequence_lengths = test_batchgen.next_batch()
             test_feed_dict= {m.Xs : test_batch_Xs, m.Ys : test_batch_Ys, 
                         m.seq_len : test_batch_sequence_lengths}
             pred = session.run([m.predict], feed_dict=test_feed_dict)
-            auc += roc_auc_score(test_batch_labels.reshape(-1),np.array(pred).reshape(-1))/50
+            auc_sum += roc_auc_score(test_batch_labels.reshape(-1),np.array(pred).reshape(-1))
+        auc = auc_sum / steps_to_test
         return auc
     m = basicDKTModel(train_batchgen.batch_size, train_batchgen.vec_length)
     with session.as_default():
@@ -236,6 +237,7 @@ def run(session,
         elif option == 'epoch':
             steps_per_epoch = train_batchgen.data_size//train_batchgen.batch_size
             for epoch in range(n_epoch):
+                train_batchgen.reset()
                 print ('Start epoch (%d/%d)' % (epoch, n_epoch))
                 sum_loss = 0
                 for step in range(steps_per_epoch):
@@ -265,10 +267,6 @@ n_epoch = 5
 n_step = 1001
 
 PrepData = IO()
-# response_list, question_list = PrepData.load_model_input('datatest.csv', sep=',')
-# batches = BatchGenerator(response_list, batch_size, id_encoding)
-# Xs, Ys, targets, len_sequences = batches.next_batch()
-# print Xs, Ys, targets, len_sequences
 train_response_list, question_list = PrepData.load_model_input('0910_c_train.csv', sep=',')
 test_response_list, question_list = PrepData.load_model_input('0910_c_test.csv', sep=',', question_list=question_list)
 id_encoding = PrepData.question_id_1hotencoding(question_list)
