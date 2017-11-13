@@ -114,24 +114,24 @@ class basicDKTModel:
         assert keep_prob > 0 and keep_prob <= 1, "keep_prob parameter should be in (0, 1]"
 
         # Inputs: to be received from the outside
-        Xs = tf.placeholder(tf.int32, shape=[batch_size, None])
-        Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length])
-        targets = tf.placeholder(tf.float32, shape=[batch_size, None])
-        sequence_length = tf.placeholder(tf.int32, shape=[batch_size])
+        Xs = tf.placeholder(tf.int32, shape=[batch_size, None], name='Xs_input')
+        Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length], name='Ys_input')
+        targets = tf.placeholder(tf.float32, shape=[batch_size, None], name='targets_input')
+        sequence_length = tf.placeholder(tf.int32, shape=[batch_size], name='sequence_ength_input')
 
         # Global parameters initialized
-        global_step = tf.Variable(0, trainable=False)
-        learning_rate = tf.train.polynomial_decay(initial_learning_rate, global_step, 5000, final_learning_rate)
+        global_step = tf.Variable(0, trainable=False, name='global_step')
+        learning_rate = tf.train.polynomial_decay(initial_learning_rate, global_step, 5000, final_learning_rate, name='learning_rate')
 
         # LSTM parameters initialized
-        w = tf.Variable(tf.truncated_normal([n_hidden, vec_length], stddev=1.0/np.sqrt(vec_length)))
-        b = tf.Variable(tf.truncated_normal([vec_length], stddev=1.0/np.sqrt(vec_length)))
-        embeddings = tf.Variable(tf.random_uniform([2 * vec_length + 2, embedding_size], -1.0, 1.0))
+        w = tf.Variable(tf.truncated_normal([n_hidden, vec_length], stddev=1.0/np.sqrt(vec_length)), name='Weight') # Weight
+        b = tf.Variable(tf.truncated_normal([vec_length], stddev=1.0/np.sqrt(vec_length)), name='Bias') # Bias
+        embeddings = tf.Variable(tf.random_uniform([2 * vec_length + 2, embedding_size], -1.0, 1.0), name='X_Embeddings')
         cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden)
-        initial_state = cell.zero_state(batch_size,tf.float32)
+        initial_state = cell.zero_state(batch_size, tf.float32)
 
         # LSTM Training options initialized
-        inputsX = tf.nn.embedding_lookup(embeddings, Xs) # Xs embedded
+        inputsX = tf.nn.embedding_lookup(embeddings, Xs, name='Xs_embedded') # Xs embedded
         outputs, state = tf.nn.dynamic_rnn(cell, inputsX, sequence_length, initial_state=initial_state)
         if keep_prob != 1:
             outputs = tf.nn.dropout(outputs, keep_prob)
@@ -277,6 +277,8 @@ train_batches = BatchGenerator(train_response_list, batch_size, id_encoding)
 test_batches = BatchGenerator(test_response_list, batch_size, id_encoding)
 
 sess = tf.Session()
-# run(sess, train_batches, test_batches, option='step', n_step=n_step)
-run(sess, train_batches, test_batches, option='epoch', n_epoch=n_epoch)
+run(sess, train_batches, test_batches, option='step', n_step=n_step)
+# run(sess, train_batches, test_batches, option='epoch', n_epoch=n_epoch)
+# tensorboard --logdir logs
+writer = tf.summary.FileWriter("logs/", sess.graph) # http://localhost:6006/#graphs on mac
 sess.close()
