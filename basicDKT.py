@@ -6,17 +6,10 @@ import pandas as pd
 import csv
 from sklearn.metrics import roc_auc_score
 
-SILENT_WARNINGS = False # to silent the warnings (https://github.com/tensorflow/tensorflow/issues/8037)
+SILENT_WARNINGS = True # to silent the warnings (https://github.com/tensorflow/tensorflow/issues/8037)
 
 if SILENT_WARNINGS:
     os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
-
-class MathFunc:
-    # creating one-hot vectors
-    def one_hot(self, hot, size):
-        vec = np.zeros(size)
-        vec[hot] = 1.0
-        return vec
 
 class IO:
     class CSVReader:
@@ -127,7 +120,7 @@ class basicDKTModel:
         w = tf.Variable(tf.truncated_normal([n_hidden, vec_length], stddev=1.0/np.sqrt(vec_length)), name='Weight') # Weight
         b = tf.Variable(tf.truncated_normal([vec_length], stddev=1.0/np.sqrt(vec_length)), name='Bias') # Bias
         embeddings = tf.Variable(tf.random_uniform([2 * vec_length + 2, embedding_size], -1.0, 1.0), name='X_Embeddings')
-        cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden)
+        cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden) # rnn cell
         initial_state = cell.zero_state(batch_size, tf.float32)
 
         # LSTM Training options initialized
@@ -155,9 +148,9 @@ class basicDKTModel:
 
         # LSTM Validation options
         test_outputs, test_state = tf.nn.dynamic_rnn(cell,inputsX,sequence_length,initial_state)
-        test_outputs_flat = tf.reshape(test_outputs, shape=[-1,n_hidden])
-        test_logits = tf.reshape(tf.nn.xw_plus_b(test_outputs_flat,w,b),shape=[batch_size,-1,vec_length])
-        test_pred = tf.sigmoid(tf.reduce_max(test_logits*Ys, axis=2))
+        test_outputs_flat = tf.reshape(test_outputs, shape=[-1,n_hidden], name='test_output')
+        test_logits = tf.reshape(tf.nn.xw_plus_b(test_outputs_flat,w,b),shape=[batch_size,-1,vec_length], name='test_logits')
+        test_pred = tf.sigmoid(tf.reduce_max(test_logits*Ys, axis=2), name='test_predict')
 
         # assigning the attributes
         self._Xs = Xs
@@ -277,6 +270,6 @@ test_batches = BatchGenerator(test_response_list, batch_size, id_encoding)
 sess = tf.Session()
 run(sess, train_batches, test_batches, option='step', n_step=n_step)
 # run(sess, train_batches, test_batches, option='epoch', n_epoch=n_epoch)
-# tensorboard --logdir logs
-writer = tf.summary.FileWriter("logs/", sess.graph) # http://localhost:6006/#graphs on mac
+# tensorboard --logdir logs_dkt
+writer = tf.summary.FileWriter("logs_dkt/", sess.graph) # http://localhost:6006/#graphs on mac
 sess.close()
