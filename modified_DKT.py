@@ -50,6 +50,15 @@ class IO:
     def question_id_1hotencoding(self, question_list):
         id_encoding = { int(j): int(i) for i, j in enumerate(question_list)}
         return id_encoding
+    def load_category_map(self, filename, sep='\t'):
+        category_map_dict = {}
+        mapping_csv = pd.read_csv(filename, sep=sep)
+        sum_skill_num = len(mapping_csv)
+        for idx in range(sum_skill_num):
+            skill_id = mapping_csv.iloc[idx]['skill_id']
+            category_id = mapping_csv.iloc[idx]['category_id']
+            category_map_dict[skill_id] = category_id
+        return category_map_dict
 
 class BatchGenerator:
     def __init__(self, data, batch_size, id_encoding):
@@ -57,6 +66,7 @@ class BatchGenerator:
         self.batch_size = batch_size
         self.id_encoding = id_encoding
         self.vec_length = len(id_encoding)
+        self.vec_length_out = len(id_encoding) - 1
         self.data_size = len(data)
         self.cursor = 0 # cursor of the current batch's starting index
     def one_hot(self, hot, size):
@@ -79,14 +89,14 @@ class BatchGenerator:
             self.cursor = (self.cursor + 1) % self.data_size
         # initialize the Xs and Ys
         Xs = np.zeros((self.batch_size, max_sequence_len),dtype=np.int32)
-        Ys = np.zeros((self.batch_size, max_sequence_len, self.vec_length), dtype=np.int32)
+        Ys = np.zeros((self.batch_size, max_sequence_len, self.vec_length_out), dtype=np.int32)
         targets = np.zeros((self.batch_size, max_sequence_len),dtype=np.int32)
         for i, sequence in enumerate(qa_sequences):
             padding_length = max_sequence_len - len(sequence)
             # s in sequence: s[0] - question id; s[1] - correctness
             Xs[i] = np.pad([2 + self.id_encoding[s[0]] + s[1] * self.vec_length for s in sequence[:-1]],
                 (1, padding_length), 'constant', constant_values=(1,0))
-            Ys[i] = np.pad([self.one_hot(self.id_encoding[s[0]],self.vec_length) for s in sequence], 
+            Ys[i] = np.pad([self.one_hot(self.id_encoding[s[0]]%self.vec_length_out, self.vec_length_out) for s in sequence], 
                 ((0, padding_length), (0, 0)), 'constant', constant_values=0)
             targets[i] = np.pad([s[1] for s in sequence],
                 (0, padding_length), 'constant', constant_values=0)
@@ -97,6 +107,7 @@ class grainedDKTModel:
             self, 
             batch_size, 
             vec_length,                     # number of questions in dataset
+            vec_length_out,                 # output size
             initial_learning_rate=0.001,
             final_learning_rate=0.00001,
             n_hidden=200,                   # number of hidden units in the hidden layer
@@ -109,7 +120,7 @@ class grainedDKTModel:
 
         # Inputs: to be received from the outside
         Xs = tf.placeholder(tf.int32, shape=[batch_size, None], name='Xs_input')
-        Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length], name='Ys_input')
+        Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length_out], name='Ys_input')
         targets = tf.placeholder(tf.float32, shape=[batch_size, None], name='targets_input')
         sequence_length = tf.placeholder(tf.int32, shape=[batch_size], name='sequence_length_input')
         n_categories = 4
@@ -119,8 +130,8 @@ class grainedDKTModel:
         learning_rate = tf.train.polynomial_decay(initial_learning_rate, global_step, 5000, final_learning_rate, name='learning_rate')
 
         # LSTM parameters initialized
-        w = tf.Variable(tf.truncated_normal([n_hidden, vec_length], stddev=1.0/np.sqrt(vec_length)), name='Weight') # Weight
-        b = tf.Variable(tf.truncated_normal([vec_length], stddev=1.0/np.sqrt(vec_length)), name='Bias') # Bias
+        w = tf.Variable(tf.truncated_normal([n_hidden, vec_length_out], stddev=1.0/np.sqrt(vec_length_out)), name='Weight') # Weight
+        b = tf.Variable(tf.truncated_normal([vec_length_out], stddev=1.0/np.sqrt(vec_length_out)), name='Bias') # Bias
         embeddings = tf.Variable(tf.random_uniform([2 * vec_length + 2, embedding_size], -1.0, 1.0), name='X_Embeddings')
         cell = tf.nn.rnn_cell.BasicLSTMCell(n_hidden) # rnn cell
         ### incorrect try 00
@@ -136,7 +147,7 @@ class grainedDKTModel:
             outputs = tf.nn.dropout(outputs, keep_prob)
         outputs_flat = tf.reshape(outputs, shape=[-1, n_hidden], name='Outputs')
         print "output shape = {0}, output flat shape = {1}, state shape = {2}".format(tf.shape(outputs), tf.shape(outputs_flat), tf.shape(state))
-        logits = tf.reshape(tf.nn.xw_plus_b(outputs_flat, w, b), shape=[batch_size,-1,vec_length], name='Logits')
+        logits = tf.reshape(tf.nn.xw_plus_b(outputs_flat, w, b), shape=[batch_size,-1, vec_length_out], name='Logits')
         pred = tf.reduce_max(logits*Ys, axis=2)
         loss = tf.nn.sigmoid_cross_entropy_with_logits(logits=pred, labels=targets)
         mask = tf.sign(tf.abs(pred))
@@ -156,7 +167,7 @@ class grainedDKTModel:
         # LSTM Validation options
         test_outputs, test_state = tf.nn.dynamic_rnn(cell,inputsX,sequence_length,initial_state)
         test_outputs_flat = tf.reshape(test_outputs, shape=[-1,n_hidden], name='test_output')
-        test_logits = tf.reshape(tf.nn.xw_plus_b(test_outputs_flat,w,b),shape=[batch_size,-1,vec_length], name='test_logits')
+        test_logits = tf.reshape(tf.nn.xw_plus_b(test_outputs_flat,w,b),shape=[batch_size,-1,vec_length_out], name='test_logits')
         test_pred = tf.sigmoid(tf.reduce_max(test_logits*Ys, axis=2), name='test_predict')
 
         # assigning the attributes
@@ -215,7 +226,7 @@ def run(session,
             auc_sum += roc_auc_score(test_batch_labels.reshape(-1),np.array(pred).reshape(-1))
         auc = auc_sum / steps_to_test
         return auc
-    m = grainedDKTModel(train_batchgen.batch_size, train_batchgen.vec_length)
+    m = grainedDKTModel(train_batchgen.batch_size, train_batchgen.vec_length, train_batchgen.vec_length_out)
     with session.as_default():
         tf.global_variables_initializer().run()
         if option == 'step':
@@ -268,8 +279,10 @@ n_epoch = 5
 n_step = 1001
 
 PrepData = IO()
+
 train_response_list, question_list = PrepData.load_model_input('0910_c_train.csv', sep=',')
 test_response_list, question_list = PrepData.load_model_input('0910_c_test.csv', sep=',', question_list=question_list)
+category_map_dict = PrepData.load_category_map('skill-category(UTF-8).csv', sep=',')
 id_encoding = PrepData.question_id_1hotencoding(question_list)
 
 train_batches = BatchGenerator(train_response_list, batch_size, id_encoding)
