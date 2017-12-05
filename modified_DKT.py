@@ -93,10 +93,7 @@ class BatchGenerator:
                 max_sequence_len = tmp_sequence_len
             self.cursor = (self.cursor + 1) % self.data_size
         # initialize the Xs and Ys
-        if self.random_embedding:
-            Xs = np.zeros((self.batch_size, max_sequence_len),dtype=np.int32)
-        else:
-            Xs = np.zeros((self.batch_size, max_sequence_len, self.vec_length_in), dtype=np.int32)
+        Xs = np.zeros((self.batch_size, max_sequence_len),dtype=np.int32)
         Ys = np.zeros((self.batch_size, max_sequence_len, self.vec_length_out), dtype=np.int32)
         targets = np.zeros((self.batch_size, max_sequence_len),dtype=np.int32)
         for i, sequence in enumerate(qa_sequences):
@@ -104,12 +101,8 @@ class BatchGenerator:
             # s in sequence: s[0] - question id; s[1] - correctness
             # Xs[i] = np.pad([2 + self.id_encoding[s[0]] + s[1] * self.vec_length_in for s in sequence[:-1]],
             #     (1, padding_length), 'constant', constant_values=(1,0))
-            if self.random_embedding:
-                Xs[i] = np.pad([2 + self.id_encoding[s[0]] + s[1] * self.vec_length_in for s in sequence[:-1]],
-                    (1, padding_length), 'constant', constant_values=(1,0))
-            else:
-                Xs[i] = np.pad([self.one_hot(2 + self.id_encoding[s[0]] + s[1] * self.vec_length_in) for s in sequence[:-1]],
-                    (1, padding_length), 'constant', constant_values=(1,0))
+            Xs[i] = np.pad([2 + self.id_encoding[s[0]] + s[1] * self.vec_length_in for s in sequence[:-1]],
+                (1, padding_length), 'constant', constant_values=(1,0))
             Ys[i] = np.pad([self.one_hot(self.id_encoding[s[0]]%self.vec_length_out, self.vec_length_out) for s in sequence], 
                 ((0, padding_length), (0, 0)), 'constant', constant_values=0)
             targets[i] = np.pad([s[1] for s in sequence],
@@ -129,15 +122,13 @@ class grainedDKTModel:
             keep_prob=0.5,
             epsilon=0.001,
             is_training=True,
-            random_embedding=True):
+            random_embedding=True,
+            multi_granined = True):
         # Rules
         assert keep_prob > 0 and keep_prob <= 1, "keep_prob parameter should be in (0, 1]"
 
         # Inputs: to be received from the outside
-        if random_embedding:
-            Xs = tf.placeholder(tf.int32, shape=[batch_size, None], name='Xs_input')
-        else:
-            Xs = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length_in], name='Xs_input') 
+        Xs = tf.placeholder(tf.int32, shape=[batch_size, None], name='Xs_input')
         Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length_out], name='Ys_input')
         targets = tf.placeholder(tf.float32, shape=[batch_size, None], name='targets_input')
         sequence_length = tf.placeholder(tf.int32, shape=[batch_size], name='sequence_length_input')
@@ -162,8 +153,14 @@ class grainedDKTModel:
         if random_embedding:
             inputsX = tf.nn.embedding_lookup(embeddings, Xs, name='Xs_embedded') # Xs embedded
         else:
-            inputsX = Xs
-        outputs, state = tf.nn.dynamic_rnn(cell, inputsX, sequence_length, initial_state=initial_state)
+            # indices = Xs
+            if multi_granined:
+                skill_id_embedding = tf.one_hot(Xs, 2 * vec_length_in + 2)
+                category_id_embedding = tf.one_hot(Xs, vec_length_in)
+                inputsX = tf.concat([category_id_embedding, skill_id_embedding], 2)
+            else:
+                inputsX = tf.one_hot(Xs, 2 * vec_length_in + 2)
+        outputs, state = tf.nn.dynamic_rnn(cell, inputsX, sequence_length, initial_state=initial_state, dtype=tf.float32)
         if is_training and keep_prob < 1:
             outputs = tf.nn.dropout(outputs, keep_prob)
         outputs_flat = tf.reshape(outputs, shape=[-1, n_hidden], name='Outputs')
@@ -233,7 +230,7 @@ def run(session,
         option, n_epoch=0, n_step=0, 
         report_loss_interval=100, report_score_interval=500,
         model_saved_path='model.ckpt',
-        one_hot=True):
+        random_embedding=False):
     assert option in ['step', 'epoch'], "Run with either epochs or steps"
     steps_to_test = test_batchgen.data_size//train_batchgen.batch_size
     assert steps_to_test > 0, "Test set too small"
@@ -248,7 +245,7 @@ def run(session,
             auc_sum += roc_auc_score(test_batch_labels.reshape(-1),np.array(pred).reshape(-1))
         auc = auc_sum / steps_to_test
         return auc
-    m = grainedDKTModel(train_batchgen.batch_size, train_batchgen.vec_length_in, train_batchgen.vec_length_out, random_embedding=True)
+    m = grainedDKTModel(train_batchgen.batch_size, train_batchgen.vec_length_in, train_batchgen.vec_length_out, random_embedding=random_embedding)
     with session.as_default():
         tf.global_variables_initializer().run()
         if option == 'step':
@@ -299,6 +296,7 @@ def run(session,
 batch_size = 16
 n_epoch = 5
 n_step = 1001
+random_embedding = False
 
 PrepData = IO()
 
@@ -310,11 +308,11 @@ category_encoding = PrepData.category_id_1hotencoding(category_map_dict)
 n_id = len(id_encoding)
 n_categories = category_encoding
 
-train_batches = BatchGenerator(train_response_list, batch_size, id_encoding, n_id, n_id)
-test_batches = BatchGenerator(test_response_list, batch_size, id_encoding, n_id, n_id)
+train_batches = BatchGenerator(train_response_list, batch_size, id_encoding, n_id, n_id, random_embedding=random_embedding)
+test_batches = BatchGenerator(test_response_list, batch_size, id_encoding, n_id, n_id, random_embedding=random_embedding)
 
 sess = tf.Session()
-run(sess, train_batches, test_batches, option='step', n_step=n_step)
+run(sess, train_batches, test_batches, option='step', n_step=n_step, random_embedding=random_embedding)
 # run(sess, train_batches, test_batches, option='epoch', n_epoch=n_epoch)
 # tensorboard --logdir multilayer_logs
 writer = tf.summary.FileWriter("./multilayer_logs/", sess.graph) # http://localhost:6006/#graphs on mac
