@@ -1,6 +1,7 @@
 import tensorflow as tf
 import numpy as np
 from sklearn.metrics import roc_auc_score
+import os
 
 class grainedDKTModel:
     def __init__(
@@ -45,7 +46,12 @@ class grainedDKTModel:
 
         # LSTM Training options initialized
         if random_embedding:
-            inputsX = tf.nn.embedding_lookup(embeddings, Xs, name='Xs_embedded') # Xs embedded
+            if multi_granined:
+                category_id_embedding = tf.one_hot(categories, n_categories)
+                skill_id_embedding = tf.nn.embedding_lookup(embeddings, Xs, name='Xs_embedded') # Xs embedded
+                inputsX = tf.concat([category_id_embedding, skill_id_embedding], 2)
+            else:
+                inputsX = tf.nn.embedding_lookup(embeddings, Xs, name='Xs_embedded') # Xs embedded
         else:
             # indices = Xs
             if multi_granined:
@@ -180,16 +186,26 @@ def run(session,
         report_loss_interval=100, report_score_interval=500,
         model_saved_path='model.ckpt',
         random_embedding=False,
+        embedding_size=200,
         multi_granined=True,
         n_categories=0,
         steps_to_test=0,
         out_folder='./',
         out_file='out.csv',
-        n_hidden_units = 200):
+        n_hidden_units = 200,
+        record_performance=True,
+        initial_learning_rate=0.001,
+        final_learning_rate=0.00001):
     assert option in ['step', 'epoch'], "Run with either epochs or steps"
     if steps_to_test == 0:
         steps_to_test = test_batchgen.data_size//test_batchgen.batch_size
     assert steps_to_test > 0, "Test set too small"
+    performance_table_path = os.path.join(out_folder, out_file)
+    if os.stat(performance_table_path).st_size == 0:
+        with open(performance_table_path, 'a') as out_file_csv:
+            out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}\n".format( \
+                'n_hidden_units', 'step', 'epoch', 'batch_size', 'embedding_size', 'keep_prob', 'random_embedding', 'multi_granined', 'initial_learning_rate', 'final_learning_rate', 'AUC'))
+
     def calc_score(m):
         auc_sum = 0.
         test_batchgen.reset()
@@ -210,7 +226,8 @@ def run(session,
         return auc
     m = grainedDKTModel(train_batchgen.batch_size, train_batchgen.vec_length_in, train_batchgen.vec_length_out, \
                         random_embedding=random_embedding, multi_granined=multi_granined, n_categories=n_categories, \
-                        keep_prob=keep_prob, n_hidden=n_hidden_units)
+                        keep_prob=keep_prob, n_hidden=n_hidden_units, embedding_size=embedding_size, \
+                        initial_learning_rate=initial_learning_rate, final_learning_rate=final_learning_rate)
     with session.as_default():
         tf.global_variables_initializer().run()
         if option == 'step':
@@ -232,6 +249,9 @@ def run(session,
                     print('AUC score: {0}'.format(auc))   
                     save_path = m.saver.save(session, model_saved_path)
                     print('Model saved in {0}'.format(save_path))
+                    with open(performance_table_path, 'a') as out_file_csv:
+                        out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}\n".format( \
+                            n_hidden_units, step + 1, '', test_batchgen.batch_size, embedding_size, keep_prob, random_embedding, multi_granined, initial_learning_rate, final_learning_rate, auc))
         elif option == 'epoch':
             steps_per_epoch = train_batchgen.data_size//train_batchgen.batch_size
             for epoch in range(n_epoch):
@@ -258,4 +278,7 @@ def run(session,
                 print('AUC score: {0}'.format(auc))   
                 save_path = m.saver.save(session, model_saved_path)
                 print('Model saved in {0}'.format(save_path))
+                with open(performance_table_path, 'a') as out_file_csv:
+                    out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}\n".format( \
+                        n_hidden_units, '', epoch + 1, test_batchgen.batch_size, embedding_size, keep_prob, random_embedding, multi_granined, initial_learning_rate, final_learning_rate, auc))
     pass
