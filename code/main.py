@@ -16,6 +16,12 @@ MODEL_LOG_FOLDER = "../logs/"
 MODEL_FOLDER = "../model/"
 MODEL_FILE = 'model.ckpt'
 
+PKU_Datafile = '../data/PKU_MOOC/question_sessions.csv'
+PKU_train = '../data/PKU_MOOC/training.csv'
+PKU_test = '../data/PKU_MOOC/testing.csv'
+PKU_evaluate_result = '../data/PKU_MOOC/PKU_results.csv'
+PKU_Category_MappingFile = '../data/PKU_MOOC/question_category.csv'
+
 fname_TrainData = ASSISTment_train
 fname_TestData = ASSISTment_test
 fname_MapData = ASSISTment_Category_MappingFile

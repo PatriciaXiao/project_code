@@ -1,5 +1,6 @@
 from datetime import datetime
 import pandas as pd
+import random
 
 # Mon  2 Dec 2013  3:44 AM UTC
 # datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
@@ -38,9 +39,13 @@ list_time = []
 list_group = []
 category_data = '../data/PKU_MOOC/question_category.csv'
 session_data = '../data/PKU_MOOC/question_sessions.csv'
+filepath_out_training = '../data/PKU_MOOC/training.csv'
+filepath_out_testing = '../data/PKU_MOOC/testing.csv'
 with open(category_data, 'w') as f:
     f.write('skill_id,category_id\n')
-with open(session_data, 'w') as f:
+with open(filepath_out_training, 'w') as f:
+    f.write('')
+with open(filepath_out_testing, 'w') as f:
     f.write('')
 sep='\t'
 questionID = 1
@@ -99,6 +104,15 @@ for date, group in data_grouped:
             if len_sess > 1:
                 with open(session_data, 'a') as f:
                     f.write("{0}\n{1}\n{2}\n".format(len_sess, oneD_array2str(current_questions), oneD_array2str(current_corrects)))
+                filepath_out_selected = [ 
+                        filepath_out_testing,
+                        filepath_out_training,
+                        filepath_out_training,
+                        filepath_out_training,
+                        filepath_out_training
+                    ]
+                with open(random.choice(filepath_out_selected), 'a') as out_selected:
+                    out_selected.write("{0}\n{1}\n{2}\n".format(len_sess, oneD_array2str(current_questions), oneD_array2str(current_corrects)))
             current_user = user_id
             current_questions = [question]
             current_corrects = [correct]
@@ -106,5 +120,15 @@ for date, group in data_grouped:
     if len_sess > 1:
         with open(session_data, 'a') as f:
             f.write("{0}\n{1}\n{2}\n".format(len_sess, oneD_array2str(current_questions), oneD_array2str(current_corrects)))
+        filepath_out_selected = [ 
+                filepath_out_testing,
+                filepath_out_training,
+                filepath_out_training,
+                filepath_out_training,
+                filepath_out_training
+            ]
+        with open(random.choice(filepath_out_selected), 'a') as out_selected:
+            out_selected.write("{0}\n{1}\n{2}\n".format(len_sess, oneD_array2str(current_questions), oneD_array2str(current_corrects)))
+
 
 

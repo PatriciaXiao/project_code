@@ -1,0 +1,159 @@
+2017-12-06 04:18:58 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 16
+2017-12-06 04:24:58 ...end
+2017-12-06 04:24:59 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 32
+2017-12-06 04:33:39 ...end
+2017-12-06 04:33:39 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 64
+2017-12-06 04:47:28 ...end
+2017-12-06 04:47:28 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 100
+2017-12-06 04:52:32 ...end
+2017-12-06 04:52:32 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 200
+2017-12-06 04:59:04 ...end
+2017-12-06 04:59:04 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 300
+2017-12-06 05:07:19 ...end
+2017-12-06 05:07:19 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.5
+2017-12-06 05:14:00 ...end
+2017-12-06 05:14:00 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.7
+2017-12-06 05:20:30 ...end
+2017-12-06 05:20:30 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.9
+2017-12-06 05:26:56 ...end
+2017-12-06 05:26:56 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.0008
+2017-12-06 05:33:19 ...end
+2017-12-06 05:33:19 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.001
+2017-12-06 05:39:42 ...end
+2017-12-06 05:39:42 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.01
+2017-12-06 05:46:12 ...end
+2017-12-06 05:46:12 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.1
+2017-12-06 05:52:39 ...end
+2017-12-06 05:52:39 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.0001
+2017-12-06 05:59:07 ...end
+2017-12-06 05:59:07 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.00001
+2017-12-06 06:05:37 ...end
+2017-12-06 06:05:37 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.000001
+2017-12-06 06:12:01 ...end
+2017-12-06 06:12:01 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 16
+2017-12-06 06:18:27 ...end
+2017-12-06 06:18:27 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 32
+2017-12-06 06:27:41 ...end
+2017-12-06 06:27:41 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 64
+2017-12-06 06:42:29 ...end
+2017-12-06 06:42:29 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 100
+2017-12-06 06:48:03 ...end
+2017-12-06 06:48:03 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 200
+2017-12-06 06:54:34 ...end
+2017-12-06 06:54:34 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 300
+2017-12-06 07:02:48 ...end
+2017-12-06 07:02:48 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.5
+2017-12-06 07:09:13 ...end
+2017-12-06 07:09:13 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.7
+2017-12-06 07:15:40 ...end
+2017-12-06 07:15:40 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.9
+2017-12-06 07:22:08 ...end
+2017-12-06 07:22:08 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.0008
+2017-12-06 07:28:34 ...end
+2017-12-06 07:28:34 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.001
+2017-12-06 07:33:56 ...end
+2017-12-06 07:33:56 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.01
+2017-12-06 07:38:58 ...end
+2017-12-06 07:38:58 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.1
+2017-12-06 07:44:01 ...end
+2017-12-06 07:44:01 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.0001
+2017-12-06 07:49:01 ...end
+2017-12-06 07:49:01 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.00001
+2017-12-06 07:53:59 ...end
+2017-12-06 07:53:59 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.000001
+2017-12-06 07:59:04 ...end
+2017-12-06 07:59:04 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 16
+2017-12-06 08:04:08 ...end
+2017-12-06 08:04:08 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 32
+2017-12-06 08:12:04 ...end
+2017-12-06 08:12:04 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 64
+2017-12-06 08:24:50 ...end
+2017-12-06 08:24:50 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 100
+2017-12-06 08:29:35 ...end
+2017-12-06 08:29:35 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 200
+2017-12-06 08:35:05 ...end
+2017-12-06 08:35:05 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 300
+2017-12-06 08:42:06 ...end
+2017-12-06 08:42:06 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.5
+2017-12-06 08:47:44 ...end
+2017-12-06 08:47:44 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.7
+2017-12-06 08:53:47 ...end
+2017-12-06 08:53:47 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.9
+2017-12-06 08:59:47 ...end
+2017-12-06 08:59:47 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.0008
+2017-12-06 09:05:50 ...end
+2017-12-06 09:05:50 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.001
+2017-12-06 09:11:52 ...end
+2017-12-06 09:11:52 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.01
+2017-12-06 09:17:57 ...end
+2017-12-06 09:17:57 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.1
+2017-12-06 09:24:00 ...end
+2017-12-06 09:24:00 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.0001
+2017-12-06 09:30:04 ...end
+2017-12-06 09:30:04 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.00001
+2017-12-06 09:36:07 ...end
+2017-12-06 09:36:07 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.000001
+2017-12-06 09:41:59 ...end
+2017-12-06 09:41:59 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 16
+2017-12-06 09:47:26 ...end
+2017-12-06 09:47:26 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 32
+2017-12-06 09:55:22 ...end
+2017-12-06 09:55:22 python main.py --input-embedding 'one_hot' --train-steps 10001 --batch-size 64
+2017-12-06 10:08:01 ...end
+2017-12-06 10:08:01 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 100
+2017-12-06 10:12:41 ...end
+2017-12-06 10:12:41 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 200
+2017-12-06 10:18:11 ...end
+2017-12-06 10:18:11 python main.py --input-embedding 'one_hot' --train-steps 10001 --num-hiddenunits 300
+2017-12-06 10:25:08 ...end
+2017-12-06 10:25:08 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.5
+2017-12-06 10:30:40 ...end
+2017-12-06 10:30:40 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.7
+2017-12-06 10:36:13 ...end
+2017-12-06 10:36:13 python main.py --input-embedding 'one_hot' --train-steps 10001 --droupout-keep 0.9
+2017-12-06 10:41:43 ...end
+2017-12-06 10:41:43 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.0008
+2017-12-06 10:47:13 ...end
+2017-12-06 10:47:13 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.001
+2017-12-06 10:52:42 ...end
+2017-12-06 10:52:42 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.01
+2017-12-06 10:58:10 ...end
+2017-12-06 10:58:10 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.1
+2017-12-06 11:03:41 ...end
+2017-12-06 11:03:41 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.0001
+2017-12-06 11:09:10 ...end
+2017-12-06 11:09:10 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.00001
+2017-12-06 11:14:41 ...end
+2017-12-06 11:14:41 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.000001
+2017-12-06 11:20:09 ...end
+2017-12-06 11:20:09 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --batch-size 16
+2017-12-06 11:25:19 ...end
+2017-12-06 11:25:19 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --batch-size 32
+2017-12-06 11:32:18 ...end
+2017-12-06 11:32:19 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --batch-size 64
+2017-12-06 11:43:48 ...end
+2017-12-06 11:43:48 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --num-hiddenunits 100
+2017-12-06 11:48:24 ...end
+2017-12-06 11:48:24 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --num-hiddenunits 200
+2017-12-06 11:53:34 ...end
+2017-12-06 11:53:34 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --num-hiddenunits 300
+2017-12-06 11:59:57 ...end
+2017-12-06 11:59:57 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --droupout-keep 0.5
+2017-12-06 12:05:08 ...end
+2017-12-06 12:05:08 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --droupout-keep 0.7
+2017-12-06 12:10:12 ...end
+2017-12-06 12:10:12 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --droupout-keep 0.9
+2017-12-06 12:15:19 ...end
+2017-12-06 12:15:19 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --learningrate-init 0.0008
+2017-12-06 12:20:30 ...end
+2017-12-06 12:20:30 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --learningrate-init 0.001
+2017-12-06 12:25:39 ...end
+2017-12-06 12:25:39 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --learningrate-init 0.01
+2017-12-06 12:30:47 ...end
+2017-12-06 12:30:47 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --learningrate-init 0.1
+2017-12-06 12:36:02 ...end
+2017-12-06 12:36:02 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --learningrate-final 0.0001
+2017-12-06 12:41:22 ...end
+2017-12-06 12:41:22 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --learningrate-final 0.00001
+2017-12-06 12:46:50 ...end
+2017-12-06 12:46:50 python main.py --input-embedding 'random' --embedding-size 50 --train-steps 10001 --learningrate-final 0.000001
