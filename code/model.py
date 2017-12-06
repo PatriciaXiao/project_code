@@ -222,8 +222,10 @@ def run(session,
     out_file_csv.close()
     if os.stat(performance_table_path).st_size == 0:
         with open(performance_table_path, 'a') as out_file_csv:
-            out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}\n".format( \
-                'n_hidden_units', 'step', 'epoch', 'batch_size', 'embedding_size', 'keep_prob', 'random_embedding', 'multi_granined', 'initial_learning_rate', 'final_learning_rate', 'AUC'))
+            out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}\n".format( \
+                'n_hidden_units', 'step', 'epoch', 'batch_size', 'embedding_size', \
+                'keep_prob', 'random_embedding', 'multi_granined', 'multi_granined_out', \
+                'initial_learning_rate', 'final_learning_rate', 'AUC'))
 
     def calc_score(m):
         auc_sum = 0.
@@ -274,8 +276,8 @@ def run(session,
                     save_path = m.saver.save(session, model_saved_path)
                     print('Model saved in {0}'.format(save_path))
                     with open(performance_table_path, 'a') as out_file_csv:
-                        out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}\n".format( \
-                            n_hidden_units, step + 1, '', test_batchgen.batch_size, embedding_size, keep_prob, random_embedding, multi_granined, initial_learning_rate, final_learning_rate, auc))
+                        out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}\n".format( \
+                            n_hidden_units, step + 1, '', test_batchgen.batch_size, embedding_size, keep_prob, random_embedding, multi_granined, multi_granined_out, initial_learning_rate, final_learning_rate, auc))
         elif option == 'epoch':
             steps_per_epoch = train_batchgen.data_size//train_batchgen.batch_size
             for epoch in range(n_epoch):
@@ -303,6 +305,6 @@ def run(session,
                 save_path = m.saver.save(session, model_saved_path)
                 print('Model saved in {0}'.format(save_path))
                 with open(performance_table_path, 'a') as out_file_csv:
-                    out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}\n".format( \
-                        n_hidden_units, '', epoch + 1, test_batchgen.batch_size, embedding_size, keep_prob, random_embedding, multi_granined, initial_learning_rate, final_learning_rate, auc))
+                    out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}\n".format( \
+                        n_hidden_units, '', epoch + 1, test_batchgen.batch_size, embedding_size, keep_prob, random_embedding, multi_granined, multi_granined_out, initial_learning_rate, final_learning_rate, auc))
     pass

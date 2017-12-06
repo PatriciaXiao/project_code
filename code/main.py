@@ -73,7 +73,6 @@ def main(args):
         keep_prob=keep_prob, n_hidden_units=n_hidden_units, embedding_size=embedding_size, \
         initial_learning_rate=0.001, final_learning_rate=0.00001,
         multi_granined_out=multi_granined_out)
-    # run(sess, train_batches, test_batches, option='epoch', n_epoch=n_epoch)
     # tensorboard --logdir logs
     writer = tf.summary.FileWriter(MODEL_LOG_FOLDER, sess.graph) # http://localhost:6006/#graphs on mac
     sess.close()
