@@ -10,9 +10,16 @@ DATA_FOLDER = '../data/'
 ASSISTment_Datafile = 'skill_builder_data.csv'
 ASSISTment_train = '../data/training_ASSISTment_all.csv'
 ASSISTment_test = '../data/testing_ASSISTment_all.csv'
-ASSISTment_evaluate_result = 'results.csv'
-Category_MappingFile = '../data/skill-category(UTF-8).csv'
-MODEL_LOG_FILE = "../multilayer_logs/"
+ASSISTment_evaluate_result = 'ASSISTment_results.csv'
+ASSISTment_Category_MappingFile = '../data/skill-category(UTF-8).csv'
+MODEL_LOG_FOLDER = "../logs/"
+MODEL_FOLDER = "../model/"
+MODEL_FILE = 'model.ckpt'
+
+fname_TrainData = ASSISTment_train
+fname_TestData = ASSISTment_test
+fname_MapData = ASSISTment_Category_MappingFile
+fname_Result = ASSISTment_evaluate_result
 
 DATA_READY = True
 SILENT_WARNINGS = True # to silent the warnings (https://github.com/tensorflow/tensorflow/issues/8037)
@@ -36,13 +43,15 @@ def main(args):
     random_embedding = True if args.embedding == 'random' else False
     assert args.granularity in ['single', 'multi'], 'Unrecognized granularity'
     multi_granined = True if args.granularity == 'multi' else False
+    assert args.granularity_out in ['single', 'multi'], 'Unrecognized granularity'
+    multi_granined_out = True if args.granularity_out == 'multi' else False
     assert args.train_mode in ['step', 'epoch'], 'Unreconized traning mode (please specify step or epoch)'
     
     PrepData = IO()
-    train_response_list, question_list = PrepData.load_model_input(ASSISTment_train, sep=',')
-    test_response_list, question_list = PrepData.load_model_input(ASSISTment_test, sep=',', question_list=question_list)
+    train_response_list, question_list = PrepData.load_model_input(fname_TrainData, sep=',')
+    test_response_list, question_list = PrepData.load_model_input(fname_TestData, sep=',', question_list=question_list)
     id_encoding = PrepData.question_id_1hotencoding(question_list)
-    category_map_dict = PrepData.load_category_map(Category_MappingFile, sep=',')
+    category_map_dict = PrepData.load_category_map(fname_MapData, sep=',')
     category_encoding = PrepData.category_id_1hotencoding(category_map_dict)
 
     skill2category_map =PrepData.skill_idx_2_category_idx(category_map_dict, category_encoding)
@@ -52,20 +61,23 @@ def main(args):
     # print {skill: category_encoding[category_map_dict[skill]] for skill in category_map_dict.keys()}
     # print skill2category_map
 
-    train_batches = BatchGenerator(train_response_list, batch_size, id_encoding, n_id, n_id, random_embedding=random_embedding, skill_to_category_dict=skill2category_map)
-    test_batches = BatchGenerator(test_response_list, batch_size, id_encoding, n_id, n_id, random_embedding=random_embedding, skill_to_category_dict=skill2category_map)
+    train_batches = BatchGenerator(train_response_list, batch_size, id_encoding, n_id, n_id, n_categories, random_embedding=random_embedding, skill_to_category_dict=skill2category_map, multi_granined_out=multi_granined_out)
+    test_batches = BatchGenerator(test_response_list, batch_size, id_encoding, n_id, n_id, n_categories, random_embedding=random_embedding, skill_to_category_dict=skill2category_map, multi_granined_out=multi_granined_out)
 
     sess = tf.Session()
     run(sess, train_batches, test_batches, \
         option=args.train_mode, record_performance=True, \
+        model_saved_path=os.path.join(MODEL_FOLDER, MODEL_FILE),
         n_step=n_step, random_embedding=random_embedding, multi_granined=multi_granined, \
-        n_categories=n_categories, out_folder=DATA_FOLDER, out_file=ASSISTment_evaluate_result, \
+        n_categories=n_categories, out_folder=DATA_FOLDER, out_file=fname_Result, \
         keep_prob=keep_prob, n_hidden_units=n_hidden_units, embedding_size=embedding_size, \
-        initial_learning_rate=0.001, final_learning_rate=0.00001)
+        initial_learning_rate=0.001, final_learning_rate=0.00001,
+        multi_granined_out=multi_granined_out)
     # run(sess, train_batches, test_batches, option='epoch', n_epoch=n_epoch)
-    # tensorboard --logdir multilayer_logs
-    writer = tf.summary.FileWriter(MODEL_LOG_FILE, sess.graph) # http://localhost:6006/#graphs on mac
+    # tensorboard --logdir logs
+    writer = tf.summary.FileWriter(MODEL_LOG_FOLDER, sess.graph) # http://localhost:6006/#graphs on mac
     sess.close()
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -92,7 +104,7 @@ if __name__ == "__main__":
                         default="step",
                         type=str,
                         help="By Step or By Epoch")
-    parser.add_argument('--num-hidden-units',     
+    parser.add_argument('--num-hiddenunits',     
                         dest='n_hidden_units',
                         default=200,
                         type=int,
@@ -127,6 +139,11 @@ if __name__ == "__main__":
                         default="single",
                         type=str,
                         help="Use standard information or multi-grained information?")
+    parser.add_argument('--output-grain',     
+                        dest='granularity_out',
+                        default="single",
+                        type=str,
+                        help="Use standard information or multi-grained information for output?")
     parse_args, unknown = parser.parse_known_args()
     # Set python level verbosity
     tf.logging.set_verbosity('INFO')

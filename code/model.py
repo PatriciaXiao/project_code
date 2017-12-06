@@ -18,13 +18,17 @@ class grainedDKTModel:
             is_training=True,
             random_embedding=True,
             multi_granined = True,
+            multi_granined_out = True,
             n_categories=0):
         # Rules
         assert keep_prob > 0 and keep_prob <= 1, "keep_prob parameter should be in (0, 1]"
 
         # Inputs: to be received from the outside
         Xs = tf.placeholder(tf.int32, shape=[batch_size, None], name='Xs_input')
-        Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length_out], name='Ys_input')
+        if multi_granined_out:
+            Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length_out], name='Ys_input')
+        else:
+            Ys = tf.placeholder(tf.float32, shape=[batch_size, None, vec_length_out], name='Ys_input')
         targets = tf.placeholder(tf.float32, shape=[batch_size, None], name='targets_input')
         sequence_length = tf.placeholder(tf.int32, shape=[batch_size], name='sequence_length_input')
         categories = tf.placeholder(tf.int32, shape=[batch_size, None], name='input_categories')
@@ -129,7 +133,7 @@ class grainedDKTModel:
         return self._pred
 
 class BatchGenerator:
-    def __init__(self, data, batch_size, id_encoding, vec_length_in, vec_length_out, random_embedding=True, skill_to_category_dict=None):
+    def __init__(self, data, batch_size, id_encoding, vec_length_in, vec_length_out, n_categories, random_embedding=True, skill_to_category_dict=None, multi_granined_out=True):
         self.data = sorted(data, key = lambda x: x[0])
         self.batch_size = batch_size
         self.id_encoding = id_encoding
@@ -138,10 +142,17 @@ class BatchGenerator:
         self.skill_to_category_dict = skill_to_category_dict
         self.data_size = len(data)
         self.random_embedding = random_embedding
+        self.multi_granined_out = multi_granined_out
         self.cursor = 0 # cursor of the current batch's starting index
+        self.n_categories = n_categories
     def one_hot(self, hot, size):
         vec = np.zeros(size)
         vec[hot] = 1.0
+        return vec
+    def combined_one_hot(self, hot1, size1, hot2, size2):
+        vec = np.zeros(size1 + size2)
+        vec[hot1] = 1.0
+        vec[hot2 + size1] = 1.0
         return vec
     def reset(self):
         self.cursor = 0
@@ -159,7 +170,10 @@ class BatchGenerator:
             self.cursor = (self.cursor + 1) % self.data_size
         # initialize the Xs and Ys
         Xs = np.zeros((self.batch_size, max_sequence_len),dtype=np.int32)
-        Ys = np.zeros((self.batch_size, max_sequence_len, self.vec_length_out), dtype=np.int32)
+        if self.multi_granined_out:
+            Ys = np.zeros((self.batch_size, max_sequence_len, self.vec_length_out + self.n_categories), dtype=np.int32)
+        else:
+            Ys = np.zeros((self.batch_size, max_sequence_len, self.vec_length_out), dtype=np.int32)
         targets = np.zeros((self.batch_size, max_sequence_len),dtype=np.int32)
         categories = np.zeros((self.batch_size, max_sequence_len),dtype=np.int32)
         for i, sequence in enumerate(qa_sequences):
@@ -169,12 +183,14 @@ class BatchGenerator:
             #     (1, padding_length), 'constant', constant_values=(1,0))
             Xs[i] = np.pad([2 + self.id_encoding[s[0]] + s[1] * self.vec_length_in for s in sequence[:-1]],
                 (1, padding_length), 'constant', constant_values=(1,0))
-            Ys[i] = np.pad([self.one_hot(self.id_encoding[s[0]]%self.vec_length_out, self.vec_length_out) for s in sequence], 
-                ((0, padding_length), (0, 0)), 'constant', constant_values=0)
+            if self.multi_granined_out:
+                Ys[i] = np.pad([self.combined_one_hot(self.skill_to_category_dict[s[0]], self.n_categories, self.id_encoding[s[0]]%self.vec_length_out, self.vec_length_out) for s in sequence], 
+                    ((0, padding_length), (0, 0)), 'constant', constant_values=0)
+            else:
+                Ys[i] = np.pad([self.one_hot(self.id_encoding[s[0]]%self.vec_length_out, self.vec_length_out) for s in sequence], 
+                    ((0, padding_length), (0, 0)), 'constant', constant_values=0)
             targets[i] = np.pad([s[1] for s in sequence],
                 (0, padding_length), 'constant', constant_values=0)
-            #categories[i] = np.pad([self.category_encoding[self.skill_to_category_dict[s[0]]] for s in sequence[:-1]],
-            #    (1, padding_length), 'constant', constant_values=(1,0))
             categories[i] = np.pad([self.skill_to_category_dict[s[0]] for s in sequence[:-1]],
                 (1, padding_length), 'constant', constant_values=(1,0))
         return Xs, Ys, targets, len_sequences, categories
@@ -195,12 +211,15 @@ def run(session,
         n_hidden_units = 200,
         record_performance=True,
         initial_learning_rate=0.001,
-        final_learning_rate=0.00001):
+        final_learning_rate=0.00001,
+        multi_granined_out=True):
     assert option in ['step', 'epoch'], "Run with either epochs or steps"
     if steps_to_test == 0:
         steps_to_test = test_batchgen.data_size//test_batchgen.batch_size
     assert steps_to_test > 0, "Test set too small"
     performance_table_path = os.path.join(out_folder, out_file)
+    out_file_csv = open(performance_table_path, 'a')
+    out_file_csv.close()
     if os.stat(performance_table_path).st_size == 0:
         with open(performance_table_path, 'a') as out_file_csv:
             out_file_csv.write("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10}\n".format( \
@@ -224,10 +243,15 @@ def run(session,
             auc_sum += roc_auc_score(label_list,pred_list)
         auc = auc_sum / steps_to_test
         return auc
-    m = grainedDKTModel(train_batchgen.batch_size, train_batchgen.vec_length_in, train_batchgen.vec_length_out, \
+    if multi_granined_out:
+        vec_length_out = train_batchgen.vec_length_out + n_categories
+    else:
+        vec_length_out = train_batchgen.vec_length_out
+    m = grainedDKTModel(train_batchgen.batch_size, train_batchgen.vec_length_in, vec_length_out, \
                         random_embedding=random_embedding, multi_granined=multi_granined, n_categories=n_categories, \
                         keep_prob=keep_prob, n_hidden=n_hidden_units, embedding_size=embedding_size, \
-                        initial_learning_rate=initial_learning_rate, final_learning_rate=final_learning_rate)
+                        initial_learning_rate=initial_learning_rate, final_learning_rate=final_learning_rate,
+                        multi_granined_out = multi_granined_out)
     with session.as_default():
         tf.global_variables_initializer().run()
         if option == 'step':
@@ -244,7 +268,7 @@ def run(session,
                     average_loss = sum_loss / min(report_loss_interval, step+1)
                     print ('Average loss at step (%d/%d): %f' % (step, n_step, average_loss))
                     sum_loss = 0
-                if step % report_score_interval == 0:
+                if step and step % report_score_interval == 0:
                     auc = calc_score(m)
                     print('AUC score: {0}'.format(auc))   
                     save_path = m.saver.save(session, model_saved_path)
