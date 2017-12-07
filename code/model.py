@@ -70,6 +70,11 @@ class grainedDKTModel:
         outputs_flat = tf.reshape(outputs, shape=[-1, n_hidden], name='Outputs')
         # print "output shape = {0}, output flat shape = {1}, state shape = {2}".format(tf.shape(outputs), tf.shape(outputs_flat), tf.shape(state))
         logits = tf.reshape(tf.nn.xw_plus_b(outputs_flat, w, b), shape=[batch_size,-1, vec_length_out], name='Logits')
+        # could be other ways like totalloss = alpha * small_category_loss + beta * big_category_loss
+        # that'll be two preds: for the gross / fine grained skill
+        # wouldn't it be easily implemented if we do:
+        # Ys = [ 0.... beta ... 0 | 0 ... alpha ... ]
+        # and then do pred.tf.reduce_sum ?
         pred = tf.reduce_max(logits*Ys, axis=2)
         loss = tf.nn.sigmoid_cross_entropy_with_logits(logits=pred, labels=targets)
         mask = tf.sign(tf.abs(pred))
