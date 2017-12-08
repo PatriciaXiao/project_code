@@ -1,0 +1,15 @@
+2017-12-07 02:04:23 python main.py --input-embedding 'one_hot' --train-steps 20001 --input-grain single --output-grain single
+2017-12-07 02:21:28 ...end
+2017-12-07 02:21:28 python main.py --input-embedding 'one_hot' --train-steps 20001 --input-grain single --output-grain multi --output-loss-mode max
+2017-12-07 02:37:23 ...end
+2017-12-07 02:37:23 python main.py --input-embedding 'one_hot' --train-steps 20001 --input-grain single --output-grain multi --output-loss-mode mean
+2017-12-07 02:52:49 ...end
+2017-12-07 02:52:49 python main.py --input-embedding 'one_hot' --train-steps 20001 --input-grain multi --output-grain single
+2017-12-07 03:08:29 ...end
+2017-12-07 03:08:29 python main.py --input-embedding 'one_hot' --train-steps 20001  --input-grain multi --output-grain multi --output-loss-mode max
+2017-12-07 03:23:54 ...end
+2017-12-07 03:23:54 python main.py --input-embedding 'one_hot' --train-steps 20001  --input-grain multi --output-grain multi --output-loss-mode mean
+2017-12-07 03:38:26 ...end
+2017-12-07 16:38:17 python main.py --input-embedding 'one_hot' --train-steps 20001 --input-grain single --output-grain single
+2017-12-07 18:41:46 ...end
+2017-12-07 18:41:46 python main.py --input-embedding 'one_hot' --train-steps 20001 --input-grain single --output-grain multi --output-loss-mode max
