@@ -405,3 +405,108 @@
 2017-12-07 19:58:12 python main.py --input-embedding 'random' --embedding-size 100 --input-grain multi --output-grain single --train-steps 10001 --learningrate-init 0.1
 2017-12-07 20:06:32 ...end
 2017-12-07 20:06:32 python main.py --input-embedding 'random' --embedding-size 200 --input-grain multi --output-grain single --train-steps 10001 --learningrate-init 0.1
+2017-12-07 20:15:23 ...end
+2017-12-07 20:15:23 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-init 0.1
+2017-12-07 20:23:49 ...end
+2017-12-07 20:23:49 python main.py --input-embedding 'random' --embedding-size 50 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-init 0.1
+2017-12-07 20:32:03 ...end
+2017-12-07 20:32:03 python main.py --input-embedding 'random' --embedding-size 100 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-init 0.1
+2017-12-07 20:40:32 ...end
+2017-12-07 20:40:32 python main.py --input-embedding 'random' --embedding-size 200 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-init 0.1
+2017-12-07 20:49:28 ...end
+2017-12-07 20:49:28 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 20:58:13 ...end
+2017-12-07 20:58:13 python main.py --input-embedding 'random' --embedding-size 50 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 21:06:30 ...end
+2017-12-07 21:06:30 python main.py --input-embedding 'random' --embedding-size 100 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 21:14:40 ...end
+2017-12-07 21:14:40 python main.py --input-embedding 'random' --embedding-size 200 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 21:23:41 ...end
+2017-12-07 21:23:41 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 21:32:53 ...end
+2017-12-07 21:32:53 python main.py --input-embedding 'random' --embedding-size 50 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 21:40:45 ...end
+2017-12-07 21:40:45 python main.py --input-embedding 'random' --embedding-size 100 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 21:49:06 ...end
+2017-12-07 21:49:06 python main.py --input-embedding 'random' --embedding-size 200 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 21:58:37 ...end
+2017-12-07 21:58:37 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 22:08:18 ...end
+2017-12-07 22:08:18 python main.py --input-embedding 'random' --embedding-size 50 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 22:16:16 ...end
+2017-12-07 22:16:16 python main.py --input-embedding 'random' --embedding-size 100 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 22:25:47 ...end
+2017-12-07 22:25:47 python main.py --input-embedding 'random' --embedding-size 200 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 22:35:50 ...end
+2017-12-07 22:35:50 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 22:44:18 ...end
+2017-12-07 22:44:18 python main.py --input-embedding 'random' --embedding-size 50 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 22:51:49 ...end
+2017-12-07 22:51:49 python main.py --input-embedding 'random' --embedding-size 100 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 22:59:23 ...end
+2017-12-07 22:59:23 python main.py --input-embedding 'random' --embedding-size 200 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.0001
+2017-12-07 23:07:35 ...end
+2017-12-07 23:07:35 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.00001
+2017-12-07 23:15:31 ...end
+2017-12-07 23:15:31 python main.py --input-embedding 'random' --embedding-size 50 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.00001
+2017-12-07 23:23:10 ...end
+2017-12-07 23:23:10 python main.py --input-embedding 'random' --embedding-size 100 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.00001
+2017-12-07 23:31:04 ...end
+2017-12-07 23:31:04 python main.py --input-embedding 'random' --embedding-size 200 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.00001
+2017-12-07 23:39:40 ...end
+2017-12-07 23:39:40 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.00001
+2017-12-07 23:48:19 ...end
+2017-12-07 23:48:19 python main.py --input-embedding 'random' --embedding-size 50 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.00001
+2017-12-07 23:55:57 ...end
+2017-12-07 23:55:57 python main.py --input-embedding 'random' --embedding-size 100 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 00:03:52 ...end
+2017-12-08 00:03:52 python main.py --input-embedding 'random' --embedding-size 200 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 00:12:23 ...end
+2017-12-08 00:12:23 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 00:21:07 ...end
+2017-12-08 00:21:08 python main.py --input-embedding 'random' --embedding-size 50 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 00:29:15 ...end
+2017-12-08 00:29:15 python main.py --input-embedding 'random' --embedding-size 100 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 00:36:58 ...end
+2017-12-08 00:36:58 python main.py --input-embedding 'random' --embedding-size 200 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 00:45:23 ...end
+2017-12-08 00:45:23 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 00:53:48 ...end
+2017-12-08 00:53:48 python main.py --input-embedding 'random' --embedding-size 50 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 01:01:46 ...end
+2017-12-08 01:01:46 python main.py --input-embedding 'random' --embedding-size 100 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 01:10:00 ...end
+2017-12-08 01:10:00 python main.py --input-embedding 'random' --embedding-size 200 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.00001
+2017-12-08 01:18:43 ...end
+2017-12-08 01:18:43 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 01:27:19 ...end
+2017-12-08 01:27:19 python main.py --input-embedding 'random' --embedding-size 50 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 01:35:19 ...end
+2017-12-08 01:35:19 python main.py --input-embedding 'random' --embedding-size 100 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 01:43:30 ...end
+2017-12-08 01:43:30 python main.py --input-embedding 'random' --embedding-size 200 --input-grain single --output-grain single --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 01:52:14 ...end
+2017-12-08 01:52:14 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 02:01:08 ...end
+2017-12-08 02:01:08 python main.py --input-embedding 'random' --embedding-size 50 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 02:09:22 ...end
+2017-12-08 02:09:22 python main.py --input-embedding 'random' --embedding-size 100 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 02:17:58 ...end
+2017-12-08 02:17:58 python main.py --input-embedding 'random' --embedding-size 200 --input-grain single --output-grain multi --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 02:27:16 ...end
+2017-12-08 02:27:16 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 02:36:15 ...end
+2017-12-08 02:36:15 python main.py --input-embedding 'random' --embedding-size 50 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 02:44:28 ...end
+2017-12-08 02:44:28 python main.py --input-embedding 'random' --embedding-size 100 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 02:52:50 ...end
+2017-12-08 02:52:50 python main.py --input-embedding 'random' --embedding-size 200 --input-grain multi --output-grain single --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 03:02:00 ...end
+2017-12-08 03:02:00 python main.py --input-embedding 'one_hot' --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 03:10:31 ...end
+2017-12-08 03:10:31 python main.py --input-embedding 'random' --embedding-size 50 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 03:18:32 ...end
+2017-12-08 03:18:32 python main.py --input-embedding 'random' --embedding-size 100 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 03:26:54 ...end
+2017-12-08 03:26:54 python main.py --input-embedding 'random' --embedding-size 200 --input-grain multi --output-grain multi --train-steps 10001 --learningrate-final 0.000001
+2017-12-08 03:35:15 ...end

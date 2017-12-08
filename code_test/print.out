@@ -2080,4 +2080,1317 @@ Average loss at step (6900/20001): 0.464122
 Average loss at step (7000/20001): 0.413013
 AUC score: 0.751838734823
 Model saved in ../model/model.ckpt
-Averag
+Average loss at step (7100/20001): 0.484349
+Average loss at step (7200/20001): 0.441940
+Average loss at step (7300/20001): 0.454398
+Average loss at step (7400/20001): 0.463193
+Average loss at step (7500/20001): 0.422004
+AUC score: 0.752030081864
+Model saved in ../model/model.ckpt
+Average loss at step (7600/20001): 0.473528
+Average loss at step (7700/20001): 0.427719
+Average loss at step (7800/20001): 0.472413
+Average loss at step (7900/20001): 0.459585
+Average loss at step (8000/20001): 0.431472
+AUC score: 0.752197153604
+Model saved in ../model/model.ckpt
+Average loss at step (8100/20001): 0.466217
+Average loss at step (8200/20001): 0.407687
+Average loss at step (8300/20001): 0.487637
+Average loss at step (8400/20001): 0.448132
+Average loss at step (8500/20001): 0.448793
+AUC score: 0.752293139522
+Model saved in ../model/model.ckpt
+Average loss at step (8600/20001): 0.462733
+Average loss at step (8700/20001): 0.421204
+Average loss at step (8800/20001): 0.475029
+Average loss at step (8900/20001): 0.439402
+Average loss at step (9000/20001): 0.458470
+AUC score: 0.752445881432
+Model saved in ../model/model.ckpt
+Average loss at step (9100/20001): 0.461222
+Average loss at step (9200/20001): 0.429637
+Average loss at step (9300/20001): 0.466142
+Average loss at step (9400/20001): 0.406114
+Average loss at step (9500/20001): 0.491470
+AUC score: 0.752486537667
+Model saved in ../model/model.ckpt
+Average loss at step (9600/20001): 0.460191
+Average loss at step (9700/20001): 0.434112
+Average loss at step (9800/20001): 0.463272
+Average loss at step (9900/20001): 0.419783
+Average loss at step (10000/20001): 0.477471
+AUC score: 0.752519065081
+Model saved in ../model/model.ckpt
+Average loss at step (10100/20001): 0.442960
+Average loss at step (10200/20001): 0.455487
+Average loss at step (10300/20001): 0.463271
+Average loss at step (10400/20001): 0.424642
+Average loss at step (10500/20001): 0.469630
+AUC score: 0.752597471595
+Model saved in ../model/model.ckpt
+Average loss at step (10600/20001): 0.402232
+Average loss at step (10700/20001): 0.495168
+Average loss at step (10800/20001): 0.458043
+Average loss at step (10900/20001): 0.436739
+Average loss at step (11000/20001): 0.462257
+AUC score: 0.752653861317
+Model saved in ../model/model.ckpt
+Average loss at step (11100/20001): 0.416514
+Average loss at step (11200/20001): 0.479933
+Average loss at step (11300/20001): 0.442648
+Average loss at step (11400/20001): 0.454956
+Average loss at step (11500/20001): 0.463532
+AUC score: 0.752636360114
+Model saved in ../model/model.ckpt
+Average loss at step (11600/20001): 0.422667
+Average loss at step (11700/20001): 0.470296
+Average loss at step (11800/20001): 0.410082
+Average loss at step (11900/20001): 0.490253
+Average loss at step (12000/20001): 0.458504
+AUC score: 0.75252622764
+Model saved in ../model/model.ckpt
+Average loss at step (12100/20001): 0.434665
+Average loss at step (12200/20001): 0.463593
+Average loss at step (12300/20001): 0.412772
+Average loss at step (12400/20001): 0.483537
+Average loss at step (12500/20001): 0.441777
+AUC score: 0.752431563795
+Model saved in ../model/model.ckpt
+Average loss at step (12600/20001): 0.453630
+Average loss at step (12700/20001): 0.463828
+Average loss at step (12800/20001): 0.421192
+Average loss at step (12900/20001): 0.474094
+Average loss at step (13000/20001): 0.423821
+AUC score: 0.752359775968
+Model saved in ../model/model.ckpt
+Average loss at step (13100/20001): 0.474047
+Average loss at step (13200/20001): 0.459217
+Average loss at step (13300/20001): 0.430847
+Average loss at step (13400/20001): 0.464773
+Average loss at step (13500/20001): 0.409880
+AUC score: 0.752344310584
+Model saved in ../model/model.ckpt
+Average loss at step (13600/20001): 0.486648
+Average loss at step (13700/20001): 0.447239
+Average loss at step (13800/20001): 0.448740
+Average loss at step (13900/20001): 0.463290
+Average loss at step (14000/20001): 0.420314
+AUC score: 0.752496148815
+Model saved in ../model/model.ckpt
+Average loss at step (14100/20001): 0.473401
+Average loss at step (14200/20001): 0.437891
+Average loss at step (14300/20001): 0.459722
+Average loss at step (14400/20001): 0.460898
+Average loss at step (14500/20001): 0.428693
+AUC score: 0.752583562804
+Model saved in ../model/model.ckpt
+Average loss at step (14600/20001): 0.465793
+Average loss at step (14700/20001): 0.405654
+Average loss at step (14800/20001): 0.490734
+Average loss at step (14900/20001): 0.459576
+Average loss at step (15000/20001): 0.434093
+AUC score: 0.752628225401
+Model saved in ../model/model.ckpt
+Average loss at step (15100/20001): 0.462814
+Average loss at step (15200/20001): 0.418316
+Average loss at step (15300/20001): 0.477982
+Average loss at step (15400/20001): 0.441756
+Average loss at step (15500/20001): 0.456735
+AUC score: 0.752718121508
+Model saved in ../model/model.ckpt
+Average loss at step (15600/20001): 0.462686
+Average loss at step (15700/20001): 0.424929
+Average loss at step (15800/20001): 0.468697
+Average loss at step (15900/20001): 0.402811
+Average loss at step (16000/20001): 0.493905
+AUC score: 0.752775153884
+Model saved in ../model/model.ckpt
+Average loss at step (16100/20001): 0.458260
+Average loss at step (16200/20001): 0.435695
+Average loss at step (16300/20001): 0.461450
+Average loss at step (16400/20001): 0.416326
+Average loss at step (16500/20001): 0.478837
+AUC score: 0.75289959377
+Model saved in ../model/model.ckpt
+Average loss at step (16600/20001): 0.442203
+Average loss at step (16700/20001): 0.453940
+Average loss at step (16800/20001): 0.462916
+Average loss at step (16900/20001): 0.422581
+Average loss at step (17000/20001): 0.470027
+AUC score: 0.752965411713
+Model saved in ../model/model.ckpt
+Average loss at step (17100/20001): 0.406802
+Average loss at step (17200/20001): 0.493233
+Average loss at step (17300/20001): 0.458189
+Average loss at step (17400/20001): 0.432936
+Average loss at step (17500/20001): 0.463071
+AUC score: 0.752974898542
+Model saved in ../model/model.ckpt
+Average loss at step (17600/20001): 0.412515
+Average loss at step (17700/20001): 0.482620
+Average loss at step (17800/20001): 0.442066
+Average loss at step (17900/20001): 0.453801
+Average loss at step (18000/20001): 0.464093
+AUC score: 0.752964235625
+Model saved in ../model/model.ckpt
+Average loss at step (18100/20001): 0.420890
+Average loss at step (18200/20001): 0.472598
+Average loss at step (18300/20001): 0.422339
+Average loss at step (18400/20001): 0.476048
+Average loss at step (18500/20001): 0.458824
+AUC score: 0.752823811546
+Model saved in ../model/model.ckpt
+Average loss at step (18600/20001): 0.430755
+Average loss at step (18700/20001): 0.464857
+Average loss at step (18800/20001): 0.410086
+Average loss at step (18900/20001): 0.484847
+Average loss at step (19000/20001): 0.446099
+AUC score: 0.752711312028
+Model saved in ../model/model.ckpt
+Average loss at step (19100/20001): 0.450871
+Average loss at step (19200/20001): 0.462981
+Average loss at step (19300/20001): 0.419757
+Average loss at step (19400/20001): 0.472890
+Average loss at step (19500/20001): 0.435142
+AUC score: 0.752644891431
+Model saved in ../model/model.ckpt
+Average loss at step (19600/20001): 0.462388
+Average loss at step (19700/20001): 0.460365
+Average loss at step (19800/20001): 0.427879
+Average loss at step (19900/20001): 0.465656
+Average loss at step (20000/20001): 0.405324
+AUC score: 0.75257310374
+Model saved in ../model/model.ckpt
+reached the end of the file ../data/training_ASSISTment_all.csv
+reached the end of the file ../data/testing_ASSISTment_all.csv
+Average loss at step (0/20001): 0.621989
+Average loss at step (100/20001): 0.631657
+Average loss at step (200/20001): 0.595441
+Average loss at step (300/20001): 0.611763
+Average loss at step (400/20001): 0.621214
+Average loss at step (500/20001): 0.569477
+AUC score: 0.700263537123
+Model saved in ../model/model.ckpt
+Average loss at step (600/20001): 0.613760
+Average loss at step (700/20001): 0.528540
+Average loss at step (800/20001): 0.574273
+Average loss at step (900/20001): 0.535989
+Average loss at step (1000/20001): 0.501493
+AUC score: 0.716247477692
+Model saved in ../model/model.ckpt
+Average loss at step (1100/20001): 0.551968
+Average loss at step (1200/20001): 0.465366
+Average loss at step (1300/20001): 0.563048
+Average loss at step (1400/20001): 0.497122
+Average loss at step (1500/20001): 0.490317
+AUC score: 0.736208549986
+Model saved in ../model/model.ckpt
+Average loss at step (1600/20001): 0.506549
+Average loss at step (1700/20001): 0.449326
+Average loss at step (1800/20001): 0.538353
+Average loss at step (1900/20001): 0.469332
+Average loss at step (2000/20001): 0.502434
+AUC score: 0.741326439102
+Model saved in ../model/model.ckpt
+Average loss at step (2100/20001): 0.490928
+Average loss at step (2200/20001): 0.455426
+Average loss at step (2300/20001): 0.508158
+Average loss at step (2400/20001): 0.451442
+Average loss at step (2500/20001): 0.507857
+AUC score: 0.74399509506
+Model saved in ../model/model.ckpt
+Average loss at step (2600/20001): 0.479683
+Average loss at step (2700/20001): 0.460533
+Average loss at step (2800/20001): 0.491044
+Average loss at step (2900/20001): 0.427435
+Average loss at step (3000/20001): 0.519715
+AUC score: 0.743862743549
+Model saved in ../model/model.ckpt
+Average loss at step (3100/20001): 0.466246
+Average loss at step (3200/20001): 0.475932
+Average loss at step (3300/20001): 0.481974
+Average loss at step (3400/20001): 0.440859
+Average loss at step (3500/20001): 0.499812
+AUC score: 0.746307098119
+Model saved in ../model/model.ckpt
+Average loss at step (3600/20001): 0.453258
+Average loss at step (3700/20001): 0.486389
+Average loss at step (3800/20001): 0.475604
+Average loss at step (3900/20001): 0.448909
+Average loss at step (4000/20001): 0.486871
+AUC score: 0.746765436806
+Model saved in ../model/model.ckpt
+Average loss at step (4100/20001): 0.417248
+Average loss at step (4200/20001): 0.516979
+Average loss at step (4300/20001): 0.471488
+Average loss at step (4400/20001): 0.455007
+Average loss at step (4500/20001): 0.480367
+AUC score: 0.74721916139
+Model saved in ../model/model.ckpt
+Average loss at step (4600/20001): 0.431721
+Average loss at step (4700/20001): 0.502545
+Average loss at step (4800/20001): 0.452555
+Average loss at step (4900/20001): 0.474567
+Average loss at step (5000/20001): 0.481481
+AUC score: 0.748624041795
+Model saved in ../model/model.ckpt
+Average loss at step (5100/20001): 0.439541
+Average loss at step (5200/20001): 0.488883
+Average loss at step (5300/20001): 0.416775
+Average loss at step (5400/20001): 0.514754
+Average loss at step (5500/20001): 0.474602
+AUC score: 0.748626595674
+Model saved in ../model/model.ckpt
+Average loss at step (5600/20001): 0.452227
+Average loss at step (5700/20001): 0.480446
+Average loss at step (5800/20001): 0.430777
+Average loss at step (5900/20001): 0.499885
+Average loss at step (6000/20001): 0.457035
+AUC score: 0.748520091782
+Model saved in ../model/model.ckpt
+Average loss at step (6100/20001): 0.471281
+Average loss at step (6200/20001): 0.482184
+Average loss at step (6300/20001): 0.437525
+Average loss at step (6400/20001): 0.489779
+Average loss at step (6500/20001): 0.427004
+AUC score: 0.748334896592
+Model saved in ../model/model.ckpt
+Average loss at step (6600/20001): 0.506774
+Average loss at step (6700/20001): 0.474255
+Average loss at step (6800/20001): 0.449136
+Average loss at step (6900/20001): 0.482815
+Average loss at step (7000/20001): 0.426528
+AUC score: 0.74834587347
+Model saved in ../model/model.ckpt
+Average loss at step (7100/20001): 0.504353
+Average loss at step (7200/20001): 0.456498
+Average loss at step (7300/20001): 0.471043
+Average loss at step (7400/20001): 0.480828
+Average loss at step (7500/20001): 0.435715
+AUC score: 0.748469966821
+Model saved in ../model/model.ckpt
+Average loss at step (7600/20001): 0.492940
+Average loss at step (7700/20001): 0.440583
+Average loss at step (7800/20001): 0.489140
+Average loss at step (7900/20001): 0.476070
+Average loss at step (8000/20001): 0.446725
+AUC score: 0.74865079917
+Model saved in ../model/model.ckpt
+Average loss at step (8100/20001): 0.484110
+Average loss at step (8200/20001): 0.421477
+Average loss at step (8300/20001): 0.506402
+Average loss at step (8400/20001): 0.462413
+Average loss at step (8500/20001): 0.465319
+AUC score: 0.748819519818
+Model saved in ../model/model.ckpt
+Average loss at step (8600/20001): 0.480667
+Average loss at step (8700/20001): 0.434512
+Average loss at step (8800/20001): 0.493552
+Average loss at step (8900/20001): 0.452674
+Average loss at step (9000/20001): 0.476892
+AUC score: 0.749000305742
+Model saved in ../model/model.ckpt
+Average loss at step (9100/20001): 0.477545
+Average loss at step (9200/20001): 0.443962
+Average loss at step (9300/20001): 0.484704
+Average loss at step (9400/20001): 0.417889
+Average loss at step (9500/20001): 0.510201
+AUC score: 0.749105453723
+Model saved in ../model/model.ckpt
+Average loss at step (9600/20001): 0.474717
+Average loss at step (9700/20001): 0.451908
+Average loss at step (9800/20001): 0.480178
+Average loss at step (9900/20001): 0.432064
+Average loss at step (10000/20001): 0.496730
+AUC score: 0.749209240482
+Model saved in ../model/model.ckpt
+Average loss at step (10100/20001): 0.455244
+Average loss at step (10200/20001): 0.472939
+Average loss at step (10300/20001): 0.479338
+Average loss at step (10400/20001): 0.438391
+Average loss at step (10500/20001): 0.488557
+AUC score: 0.749248635758
+Model saved in ../model/model.ckpt
+Average loss at step (10600/20001): 0.414219
+Average loss at step (10700/20001): 0.514645
+Average loss at step (10800/20001): 0.473045
+Average loss at step (10900/20001): 0.451481
+Average loss at step (11000/20001): 0.479172
+AUC score: 0.74926936639
+Model saved in ../model/model.ckpt
+Average loss at step (11100/20001): 0.429066
+Average loss at step (11200/20001): 0.499305
+Average loss at step (11300/20001): 0.455620
+Average loss at step (11400/20001): 0.472156
+Average loss at step (11500/20001): 0.479531
+AUC score: 0.749203769086
+Model saved in ../model/model.ckpt
+Average loss at step (11600/20001): 0.436514
+Average loss at step (11700/20001): 0.489391
+Average loss at step (11800/20001): 0.421981
+Average loss at step (11900/20001): 0.509510
+Average loss at step (12000/20001): 0.471585
+AUC score: 0.74895163283
+Model saved in ../model/model.ckpt
+Average loss at step (12100/20001): 0.449003
+Average loss at step (12200/20001): 0.480577
+Average loss at step (12300/20001): 0.425268
+Average loss at step (12400/20001): 0.503177
+Average loss at step (12500/20001): 0.454442
+AUC score: 0.748902559738
+Model saved in ../model/model.ckpt
+Average loss at step (12600/20001): 0.471192
+Average loss at step (12700/20001): 0.479721
+Average loss at step (12800/20001): 0.433742
+Average loss at step (12900/20001): 0.492723
+Average loss at step (13000/20001): 0.435850
+AUC score: 0.748710640101
+Model saved in ../model/model.ckpt
+Average loss at step (13100/20001): 0.492614
+Average loss at step (13200/20001): 0.473353
+Average loss at step (13300/20001): 0.445816
+Average loss at step (13400/20001): 0.482472
+Average loss at step (13500/20001): 0.421280
+AUC score: 0.74866624539
+Model saved in ../model/model.ckpt
+Average loss at step (13600/20001): 0.505377
+Average loss at step (13700/20001): 0.460519
+Average loss at step (13800/20001): 0.465888
+Average loss at step (13900/20001): 0.478963
+Average loss at step (14000/20001): 0.434138
+AUC score: 0.748796871783
+Model saved in ../model/model.ckpt
+Average loss at step (14100/20001): 0.492706
+Average loss at step (14200/20001): 0.449576
+Average loss at step (14300/20001): 0.477430
+Average loss at step (14400/20001): 0.476156
+Average loss at step (14500/20001): 0.443077
+AUC score: 0.748955809823
+Model saved in ../model/model.ckpt
+Average loss at step (14600/20001): 0.484343
+Average loss at step (14700/20001): 0.417282
+Average loss at step (14800/20001): 0.510314
+Average loss at step (14900/20001): 0.473409
+Average loss at step (15000/20001): 0.451118
+AUC score: 0.749017823431
+Model saved in ../model/model.ckpt
+Average loss at step (15100/20001): 0.479026
+Average loss at step (15200/20001): 0.430835
+Average loss at step (15300/20001): 0.495318
+Average loss at step (15400/20001): 0.453964
+Average loss at step (15500/20001): 0.472625
+AUC score: 0.749163080081
+Model saved in ../model/model.ckpt
+Average loss at step (15600/20001): 0.478868
+Average loss at step (15700/20001): 0.437964
+Average loss at step (15800/20001): 0.487147
+Average loss at step (15900/20001): 0.413886
+Average loss at step (16000/20001): 0.513487
+AUC score: 0.749231614344
+Model saved in ../model/model.ckpt
+Average loss at step (16100/20001): 0.472062
+Average loss at step (16200/20001): 0.451518
+Average loss at step (16300/20001): 0.477921
+Average loss at step (16400/20001): 0.428597
+Average loss at step (16500/20001): 0.498349
+AUC score: 0.749326170514
+Model saved in ../model/model.ckpt
+Average loss at step (16600/20001): 0.453882
+Average loss at step (16700/20001): 0.470824
+Average loss at step (16800/20001): 0.478545
+Average loss at step (16900/20001): 0.435863
+Average loss at step (17000/20001): 0.488398
+AUC score: 0.749394947069
+Model saved in ../model/model.ckpt
+Average loss at step (17100/20001): 0.418182
+Average loss at step (17200/20001): 0.510954
+Average loss at step (17300/20001): 0.472176
+Average loss at step (17400/20001): 0.447736
+Average loss at step (17500/20001): 0.480526
+AUC score: 0.749433984002
+Model saved in ../model/model.ckpt
+Average loss at step (17600/20001): 0.423813
+Average loss at step (17700/20001): 0.501961
+Average loss at step (17800/20001): 0.453973
+Average loss at step (17900/20001): 0.470192
+Average loss at step (18000/20001): 0.479201
+AUC score: 0.749465181706
+Model saved in ../model/model.ckpt
+Average loss at step (18100/20001): 0.433231
+Average loss at step (18200/20001): 0.490090
+Average loss at step (18300/20001): 0.433864
+Average loss at step (18400/20001): 0.494055
+Average loss at step (18500/20001): 0.472657
+AUC score: 0.749313895393
+Model saved in ../model/model.ckpt
+Average loss at step (18600/20001): 0.445296
+Average loss at step (18700/20001): 0.482029
+Average loss at step (18800/20001): 0.421239
+Average loss at step (18900/20001): 0.503481
+Average loss at step (19000/20001): 0.458567
+AUC score: 0.749206652249
+Model saved in ../model/model.ckpt
+Average loss at step (19100/20001): 0.467144
+Average loss at step (19200/20001): 0.477631
+Average loss at step (19300/20001): 0.431717
+Average loss at step (19400/20001): 0.491721
+Average loss at step (19500/20001): 0.446642
+AUC score: 0.749109933793
+Model saved in ../model/model.ckpt
+Average loss at step (19600/20001): 0.479374
+Average loss at step (19700/20001): 0.475343
+Average loss at step (19800/20001): 0.441759
+Average loss at step (19900/20001): 0.482997
+Average loss at step (20000/20001): 0.416132
+AUC score: 0.748987803715
+Model saved in ../model/model.ckpt
+reached the end of the file ../data/training_ASSISTment_all.csv
+reached the end of the file ../data/testing_ASSISTment_all.csv
+Average loss at step (0/20001): 0.333396
+Average loss at step (100/20001): 0.408932
+Average loss at step (200/20001): 0.471478
+Average loss at step (300/20001): 0.472781
+Average loss at step (400/20001): 0.516854
+Average loss at step (500/20001): 0.482292
+AUC score: 0.678013902963
+Model saved in ../model/model.ckpt
+Average loss at step (600/20001): 0.515539
+Average loss at step (700/20001): 0.491442
+Average loss at step (800/20001): 0.490712
+Average loss at step (900/20001): 0.497843
+Average loss at step (1000/20001): 0.439529
+AUC score: 0.724992269517
+Model saved in ../model/model.ckpt
+Average loss at step (1100/20001): 0.492391
+Average loss at step (1200/20001): 0.431058
+Average loss at step (1300/20001): 0.485687
+Average loss at step (1400/20001): 0.460912
+Average loss at step (1500/20001): 0.429913
+AUC score: 0.750406181021
+Model saved in ../model/model.ckpt
+Average loss at step (1600/20001): 0.465777
+Average loss at step (1700/20001): 0.411554
+Average loss at step (1800/20001): 0.479997
+Average loss at step (1900/20001): 0.438064
+Average loss at step (2000/20001): 0.442180
+AUC score: 0.758292414
+Model saved in ../model/model.ckpt
+Average loss at step (2100/20001): 0.453399
+Average loss at step (2200/20001): 0.408348
+Average loss at step (2300/20001): 0.460657
+Average loss at step (2400/20001): 0.424326
+Average loss at step (2500/20001): 0.446994
+AUC score: 0.761413899473
+Model saved in ../model/model.ckpt
+Average loss at step (2600/20001): 0.446479
+Average loss at step (2700/20001): 0.408948
+Average loss at step (2800/20001): 0.450409
+Average loss at step (2900/20001): 0.393985
+Average loss at step (3000/20001): 0.466626
+AUC score: 0.763278537753
+Model saved in ../model/model.ckpt
+Average loss at step (3100/20001): 0.434123
+Average loss at step (3200/20001): 0.419905
+Average loss at step (3300/20001): 0.444973
+Average loss at step (3400/20001): 0.395485
+Average loss at step (3500/20001): 0.454526
+AUC score: 0.765684581245
+Model saved in ../model/model.ckpt
+Average loss at step (3600/20001): 0.424556
+Average loss at step (3700/20001): 0.425791
+Average loss at step (3800/20001): 0.443100
+Average loss at step (3900/20001): 0.397297
+Average loss at step (4000/20001): 0.446307
+AUC score: 0.766404630154
+Model saved in ../model/model.ckpt
+Average loss at step (4100/20001): 0.387999
+Average loss at step (4200/20001): 0.458489
+Average loss at step (4300/20001): 0.439862
+Average loss at step (4400/20001): 0.401340
+Average loss at step (4500/20001): 0.442289
+AUC score: 0.767376018737
+Model saved in ../model/model.ckpt
+Average loss at step (4600/20001): 0.392363
+Average loss at step (4700/20001): 0.452492
+Average loss at step (4800/20001): 0.425406
+Average loss at step (4900/20001): 0.413703
+Average loss at step (5000/20001): 0.447157
+AUC score: 0.768219372023
+Model saved in ../model/model.ckpt
+Average loss at step (5100/20001): 0.393716
+Average loss at step (5200/20001): 0.442508
+Average loss at step (5300/20001): 0.391309
+Average loss at step (5400/20001): 0.452522
+Average loss at step (5500/20001): 0.441253
+AUC score: 0.767965222887
+Model saved in ../model/model.ckpt
+Average loss at step (5600/20001): 0.400479
+Average loss at step (5700/20001): 0.438005
+Average loss at step (5800/20001): 0.395327
+Average loss at step (5900/20001): 0.448177
+Average loss at step (6000/20001): 0.428472
+AUC score: 0.767770457847
+Model saved in ../model/model.ckpt
+Average loss at step (6100/20001): 0.415010
+Average loss at step (6200/20001): 0.445351
+Average loss at step (6300/20001): 0.393626
+Average loss at step (6400/20001): 0.442585
+Average loss at step (6500/20001): 0.402238
+AUC score: 0.767432099574
+Model saved in ../model/model.ckpt
+Average loss at step (6600/20001): 0.446062
+Average loss at step (6700/20001): 0.440603
+Average loss at step (6800/20001): 0.399441
+Average loss at step (6900/20001): 0.441195
+Average loss at step (7000/20001): 0.392284
+AUC score: 0.767328661686
+Model saved in ../model/model.ckpt
+Average loss at step (7100/20001): 0.450853
+Average loss at step (7200/20001): 0.426495
+Average loss at step (7300/20001): 0.416155
+Average loss at step (7400/20001): 0.443179
+Average loss at step (7500/20001): 0.394284
+AUC score: 0.767552308874
+Model saved in ../model/model.ckpt
+Average loss at step (7600/20001): 0.443175
+Average loss at step (7700/20001): 0.414892
+Average loss at step (7800/20001): 0.429716
+Average loss at step (7900/20001): 0.441746
+Average loss at step (8000/20001): 0.397551
+AUC score: 0.767810568481
+Model saved in ../model/model.ckpt
+Average loss at step (8100/20001): 0.442050
+Average loss at step (8200/20001): 0.389358
+Average loss at step (8300/20001): 0.451969
+Average loss at step (8400/20001): 0.430505
+Average loss at step (8500/20001): 0.412781
+AUC score: 0.767987113434
+Model saved in ../model/model.ckpt
+Average loss at step (8600/20001): 0.440955
+Average loss at step (8700/20001): 0.394445
+Average loss at step (8800/20001): 0.443827
+Average loss at step (8900/20001): 0.425619
+Average loss at step (9000/20001): 0.417733
+AUC score: 0.768216038087
+Model saved in ../model/model.ckpt
+Average loss at step (9100/20001): 0.442445
+Average loss at step (9200/20001): 0.396677
+Average loss at step (9300/20001): 0.441358
+Average loss at step (9400/20001): 0.389880
+Average loss at step (9500/20001): 0.452742
+AUC score: 0.768314293862
+Model saved in ../model/model.ckpt
+Average loss at step (9600/20001): 0.442541
+Average loss at step (9700/20001): 0.399200
+Average loss at step (9800/20001): 0.440851
+Average loss at step (9900/20001): 0.394271
+Average loss at step (10000/20001): 0.447359
+AUC score: 0.768538718387
+Model saved in ../model/model.ckpt
+Average loss at step (10100/20001): 0.427497
+Average loss at step (10200/20001): 0.414765
+Average loss at step (10300/20001): 0.443619
+Average loss at step (10400/20001): 0.393928
+Average loss at step (10500/20001): 0.442986
+AUC score: 0.768656319406
+Model saved in ../model/model.ckpt
+Average loss at step (10600/20001): 0.389067
+Average loss at step (10700/20001): 0.455352
+Average loss at step (10800/20001): 0.440327
+Average loss at step (10900/20001): 0.402542
+Average loss at step (11000/20001): 0.438323
+AUC score: 0.768763253914
+Model saved in ../model/model.ckpt
+Average loss at step (11100/20001): 0.393794
+Average loss at step (11200/20001): 0.448013
+Average loss at step (11300/20001): 0.427001
+Average loss at step (11400/20001): 0.414921
+Average loss at step (11500/20001): 0.443583
+AUC score: 0.768828827898
+Model saved in ../model/model.ckpt
+Average loss at step (11600/20001): 0.392066
+Average loss at step (11700/20001): 0.443698
+Average loss at step (11800/20001): 0.397282
+Average loss at step (11900/20001): 0.448745
+Average loss at step (12000/20001): 0.438888
+AUC score: 0.768594911399
+Model saved in ../model/model.ckpt
+Average loss at step (12100/20001): 0.400390
+Average loss at step (12200/20001): 0.440202
+Average loss at step (12300/20001): 0.390368
+Average loss at step (12400/20001): 0.451145
+Average loss at step (12500/20001): 0.425725
+AUC score: 0.768365301813
+Model saved in ../model/model.ckpt
+Average loss at step (12600/20001): 0.415284
+Average loss at step (12700/20001): 0.442893
+Average loss at step (12800/20001): 0.392529
+Average loss at step (12900/20001): 0.445187
+Average loss at step (13000/20001): 0.411137
+AUC score: 0.767997913977
+Model saved in ../model/model.ckpt
+Average loss at step (13100/20001): 0.432873
+Average loss at step (13200/20001): 0.440384
+Average loss at step (13300/20001): 0.397534
+Average loss at step (13400/20001): 0.441029
+Average loss at step (13500/20001): 0.388852
+AUC score: 0.767816413792
+Model saved in ../model/model.ckpt
+Average loss at step (13600/20001): 0.450242
+Average loss at step (13700/20001): 0.430125
+Average loss at step (13800/20001): 0.412325
+Average loss at step (13900/20001): 0.442585
+Average loss at step (14000/20001): 0.393704
+AUC score: 0.767961257001
+Model saved in ../model/model.ckpt
+Average loss at step (14100/20001): 0.443182
+Average loss at step (14200/20001): 0.422819
+Average loss at step (14300/20001): 0.418780
+Average loss at step (14400/20001): 0.442224
+Average loss at step (14500/20001): 0.396013
+AUC score: 0.768333685245
+Model saved in ../model/model.ckpt
+Average loss at step (14600/20001): 0.441437
+Average loss at step (14700/20001): 0.388565
+Average loss at step (14800/20001): 0.453454
+Average loss at step (14900/20001): 0.440688
+Average loss at step (15000/20001): 0.400235
+AUC score: 0.768512090916
+Model saved in ../model/model.ckpt
+Average loss at step (15100/20001): 0.439147
+Average loss at step (15200/20001): 0.392790
+Average loss at step (15300/20001): 0.446537
+Average loss at step (15400/20001): 0.426081
+Average loss at step (15500/20001): 0.415049
+AUC score: 0.76861634349
+Model saved in ../model/model.ckpt
+Average loss at step (15600/20001): 0.443609
+Average loss at step (15700/20001): 0.393253
+Average loss at step (15800/20001): 0.442289
+Average loss at step (15900/20001): 0.387995
+Average loss at step (16000/20001): 0.453077
+AUC score: 0.768748323955
+Model saved in ../model/model.ckpt
+Average loss at step (16100/20001): 0.438760
+Average loss at step (16200/20001): 0.401040
+Average loss at step (16300/20001): 0.437829
+Average loss at step (16400/20001): 0.392099
+Average loss at step (16500/20001): 0.446733
+AUC score: 0.76876182377
+Model saved in ../model/model.ckpt
+Average loss at step (16600/20001): 0.425836
+Average loss at step (16700/20001): 0.414391
+Average loss at step (16800/20001): 0.441487
+Average loss at step (16900/20001): 0.390683
+Average loss at step (17000/20001): 0.442898
+AUC score: 0.768903561116
+Model saved in ../model/model.ckpt
+Average loss at step (17100/20001): 0.393352
+Average loss at step (17200/20001): 0.451110
+Average loss at step (17300/20001): 0.438819
+Average loss at step (17400/20001): 0.399847
+Average loss at step (17500/20001): 0.439530
+AUC score: 0.769017556093
+Model saved in ../model/model.ckpt
+Average loss at step (17600/20001): 0.389458
+Average loss at step (17700/20001): 0.449883
+Average loss at step (17800/20001): 0.424687
+Average loss at step (17900/20001): 0.414712
+Average loss at step (18000/20001): 0.442020
+AUC score: 0.769135088407
+Model saved in ../model/model.ckpt
+Average loss at step (18100/20001): 0.390993
+Average loss at step (18200/20001): 0.442986
+Average loss at step (18300/20001): 0.409185
+Average loss at step (18400/20001): 0.433214
+Average loss at step (18500/20001): 0.439154
+AUC score: 0.768994204411
+Model saved in ../model/model.ckpt
+Average loss at step (18600/20001): 0.397689
+Average loss at step (18700/20001): 0.440191
+Average loss at step (18800/20001): 0.388846
+Average loss at step (18900/20001): 0.449923
+Average loss at step (19000/20001): 0.427579
+AUC score: 0.768788337128
+Model saved in ../model/model.ckpt
+Average loss at step (19100/20001): 0.412567
+Average loss at step (19200/20001): 0.441360
+Average loss at step (19300/20001): 0.392477
+Average loss at step (19400/20001): 0.442955
+Average loss at step (19500/20001): 0.420832
+AUC score: 0.768444497893
+Model saved in ../model/model.ckpt
+Average loss at step (19600/20001): 0.419889
+Average loss at step (19700/20001): 0.440023
+Average loss at step (19800/20001): 0.394433
+Average loss at step (19900/20001): 0.439932
+Average loss at step (20000/20001): 0.386397
+AUC score: 0.768187756071
+Model saved in ../model/model.ckpt
+reached the end of the file ../data/training_ASSISTment_all.csv
+reached the end of the file ../data/testing_ASSISTment_all.csv
+Average loss at step (0/20001): 0.426820
+Average loss at step (100/20001): 0.556530
+Average loss at step (200/20001): 0.606852
+Average loss at step (300/20001): 0.595907
+Average loss at step (400/20001): 0.607876
+Average loss at step (500/20001): 0.525264
+AUC score: 0.686247573695
+Model saved in ../model/model.ckpt
+Average loss at step (600/20001): 0.573299
+Average loss at step (700/20001): 0.494984
+Average loss at step (800/20001): 0.531288
+Average loss at step (900/20001): 0.501798
+Average loss at step (1000/20001): 0.475208
+AUC score: 0.73503515604
+Model saved in ../model/model.ckpt
+Average loss at step (1100/20001): 0.510847
+Average loss at step (1200/20001): 0.444368
+Average loss at step (1300/20001): 0.530179
+Average loss at step (1400/20001): 0.477079
+Average loss at step (1500/20001): 0.465866
+AUC score: 0.742346097873
+Model saved in ../model/model.ckpt
+Average loss at step (1600/20001): 0.483853
+Average loss at step (1700/20001): 0.430820
+Average loss at step (1800/20001): 0.512612
+Average loss at step (1900/20001): 0.452710
+Average loss at step (2000/20001): 0.477741
+AUC score: 0.746502336408
+Model saved in ../model/model.ckpt
+Average loss at step (2100/20001): 0.470441
+Average loss at step (2200/20001): 0.434476
+Average loss at step (2300/20001): 0.486482
+Average loss at step (2400/20001): 0.434612
+Average loss at step (2500/20001): 0.486478
+AUC score: 0.748188106757
+Model saved in ../model/model.ckpt
+Average loss at step (2600/20001): 0.461859
+Average loss at step (2700/20001): 0.441504
+Average loss at step (2800/20001): 0.471371
+Average loss at step (2900/20001): 0.409805
+Average loss at step (3000/20001): 0.500331
+AUC score: 0.749142667716
+Model saved in ../model/model.ckpt
+Average loss at step (3100/20001): 0.449373
+Average loss at step (3200/20001): 0.454734
+Average loss at step (3300/20001): 0.465610
+Average loss at step (3400/20001): 0.422055
+Average loss at step (3500/20001): 0.482280
+AUC score: 0.750246226116
+Model saved in ../model/model.ckpt
+Average loss at step (3600/20001): 0.437443
+Average loss at step (3700/20001): 0.466647
+Average loss at step (3800/20001): 0.459345
+Average loss at step (3900/20001): 0.430038
+Average loss at step (4000/20001): 0.470178
+AUC score: 0.750836172126
+Model saved in ../model/model.ckpt
+Average loss at step (4100/20001): 0.400025
+Average loss at step (4200/20001): 0.498404
+Average loss at step (4300/20001): 0.455022
+Average loss at step (4400/20001): 0.436160
+Average loss at step (4500/20001): 0.462613
+AUC score: 0.751680707786
+Model saved in ../model/model.ckpt
+Average loss at step (4600/20001): 0.414356
+Average loss at step (4700/20001): 0.482632
+Average loss at step (4800/20001): 0.438502
+Average loss at step (4900/20001): 0.453420
+Average loss at step (5000/20001): 0.461577
+AUC score: 0.752806101739
+Model saved in ../model/model.ckpt
+Average loss at step (5100/20001): 0.422645
+Average loss at step (5200/20001): 0.467989
+Average loss at step (5300/20001): 0.401163
+Average loss at step (5400/20001): 0.494855
+Average loss at step (5500/20001): 0.457157
+AUC score: 0.752830055682
+Model saved in ../model/model.ckpt
+Average loss at step (5600/20001): 0.433368
+Average loss at step (5700/20001): 0.460826
+Average loss at step (5800/20001): 0.414200
+Average loss at step (5900/20001): 0.480502
+Average loss at step (6000/20001): 0.440139
+AUC score: 0.752794817563
+Model saved in ../model/model.ckpt
+Average loss at step (6100/20001): 0.451586
+Average loss at step (6200/20001): 0.461995
+Average loss at step (6300/20001): 0.420921
+Average loss at step (6400/20001): 0.467702
+Average loss at step (6500/20001): 0.410796
+AUC score: 0.75267330614
+Model saved in ../model/model.ckpt
+Average loss at step (6600/20001): 0.486346
+Average loss at step (6700/20001): 0.456192
+Average loss at step (6800/20001): 0.430589
+Average loss at step (6900/20001): 0.462253
+Average loss at step (7000/20001): 0.409797
+AUC score: 0.752691286936
+Model saved in ../model/model.ckpt
+Average loss at step (7100/20001): 0.483390
+Average loss at step (7200/20001): 0.439748
+Average loss at step (7300/20001): 0.452030
+Average loss at step (7400/20001): 0.461943
+Average loss at step (7500/20001): 0.419161
+AUC score: 0.752871261022
+Model saved in ../model/model.ckpt
+Average loss at step (7600/20001): 0.471983
+Average loss at step (7700/20001): 0.424711
+Average loss at step (7800/20001): 0.469798
+Average loss at step (7900/20001): 0.457632
+Average loss at step (8000/20001): 0.428509
+AUC score: 0.753035806156
+Model saved in ../model/model.ckpt
+Average loss at step (8100/20001): 0.463799
+Average loss at step (8200/20001): 0.404724
+Average loss at step (8300/20001): 0.486199
+Average loss at step (8400/20001): 0.444276
+Average loss at step (8500/20001): 0.447038
+AUC score: 0.753125051554
+Model saved in ../model/model.ckpt
+Average loss at step (8600/20001): 0.460677
+Average loss at step (8700/20001): 0.417442
+Average loss at step (8800/20001): 0.473267
+Average loss at step (8900/20001): 0.436967
+Average loss at step (9000/20001): 0.455700
+AUC score: 0.753256811979
+Model saved in ../model/model.ckpt
+Average loss at step (9100/20001): 0.458239
+Average loss at step (9200/20001): 0.425965
+Average loss at step (9300/20001): 0.464703
+Average loss at step (9400/20001): 0.401876
+Average loss at step (9500/20001): 0.490684
+AUC score: 0.753295960823
+Model saved in ../model/model.ckpt
+Average loss at step (9600/20001): 0.456706
+Average loss at step (9700/20001): 0.432968
+Average loss at step (9800/20001): 0.460117
+Average loss at step (9900/20001): 0.415286
+Average loss at step (10000/20001): 0.475789
+AUC score: 0.753404951093
+Model saved in ../model/model.ckpt
+Average loss at step (10100/20001): 0.439735
+Average loss at step (10200/20001): 0.452979
+Average loss at step (10300/20001): 0.460777
+Average loss at step (10400/20001): 0.421035
+Average loss at step (10500/20001): 0.468153
+AUC score: 0.753480926775
+Model saved in ../model/model.ckpt
+Average loss at step (10600/20001): 0.398701
+Average loss at step (10700/20001): 0.493669
+Average loss at step (10800/20001): 0.455452
+Average loss at step (10900/20001): 0.432880
+Average loss at step (11000/20001): 0.458859
+AUC score: 0.753484398087
+Model saved in ../model/model.ckpt
+Average loss at step (11100/20001): 0.413218
+Average loss at step (11200/20001): 0.478422
+Average loss at step (11300/20001): 0.439491
+Average loss at step (11400/20001): 0.451212
+Average loss at step (11500/20001): 0.460164
+AUC score: 0.753513676949
+Model saved in ../model/model.ckpt
+Average loss at step (11600/20001): 0.419051
+Average loss at step (11700/20001): 0.468494
+Average loss at step (11800/20001): 0.406330
+Average loss at step (11900/20001): 0.489156
+Average loss at step (12000/20001): 0.454241
+AUC score: 0.753442870874
+Model saved in ../model/model.ckpt
+Average loss at step (12100/20001): 0.429830
+Average loss at step (12200/20001): 0.460573
+Average loss at step (12300/20001): 0.408437
+Average loss at step (12400/20001): 0.482990
+Average loss at step (12500/20001): 0.438486
+AUC score: 0.753293724302
+Model saved in ../model/model.ckpt
+Average loss at step (12600/20001): 0.450886
+Average loss at step (12700/20001): 0.460647
+Average loss at step (12800/20001): 0.417378
+Average loss at step (12900/20001): 0.471189
+Average loss at step (13000/20001): 0.420573
+AUC score: 0.753142478832
+Model saved in ../model/model.ckpt
+Average loss at step (13100/20001): 0.471399
+Average loss at step (13200/20001): 0.455860
+Average loss at step (13300/20001): 0.427716
+Average loss at step (13400/20001): 0.462517
+Average loss at step (13500/20001): 0.405284
+AUC score: 0.753160249883
+Model saved in ../model/model.ckpt
+Average loss at step (13600/20001): 0.484297
+Average loss at step (13700/20001): 0.443924
+Average loss at step (13800/20001): 0.446347
+Average loss at step (13900/20001): 0.460144
+Average loss at step (14000/20001): 0.417040
+AUC score: 0.753311038274
+Model saved in ../model/model.ckpt
+Average loss at step (14100/20001): 0.471365
+Average loss at step (14200/20001): 0.434246
+Average loss at step (14300/20001): 0.457096
+Average loss at step (14400/20001): 0.457793
+Average loss at step (14500/20001): 0.425595
+AUC score: 0.753437187077
+Model saved in ../model/model.ckpt
+Average loss at step (14600/20001): 0.463692
+Average loss at step (14700/20001): 0.401189
+Average loss at step (14800/20001): 0.489593
+Average loss at step (14900/20001): 0.455204
+Average loss at step (15000/20001): 0.430782
+AUC score: 0.753506622161
+Model saved in ../model/model.ckpt
+Average loss at step (15100/20001): 0.459940
+Average loss at step (15200/20001): 0.414781
+Average loss at step (15300/20001): 0.474241
+Average loss at step (15400/20001): 0.438698
+Average loss at step (15500/20001): 0.452816
+AUC score: 0.753582267029
+Model saved in ../model/model.ckpt
+Average loss at step (15600/20001): 0.459721
+Average loss at step (15700/20001): 0.421235
+Average loss at step (15800/20001): 0.466323
+Average loss at step (15900/20001): 0.398295
+Average loss at step (16000/20001): 0.492795
+AUC score: 0.753625427095
+Model saved in ../model/model.ckpt
+Average loss at step (16100/20001): 0.453979
+Average loss at step (16200/20001): 0.432429
+Average loss at step (16300/20001): 0.458573
+Average loss at step (16400/20001): 0.412227
+Average loss at step (16500/20001): 0.477394
+AUC score: 0.753704272072
+Model saved in ../model/model.ckpt
+Average loss at step (16600/20001): 0.438719
+Average loss at step (16700/20001): 0.451128
+Average loss at step (16800/20001): 0.460113
+Average loss at step (16900/20001): 0.419020
+Average loss at step (17000/20001): 0.468102
+AUC score: 0.753790597745
+Model saved in ../model/model.ckpt
+Average loss at step (17100/20001): 0.402438
+Average loss at step (17200/20001): 0.489894
+Average loss at step (17300/20001): 0.455530
+Average loss at step (17400/20001): 0.429837
+Average loss at step (17500/20001): 0.460425
+AUC score: 0.753785842927
+Model saved in ../model/model.ckpt
+Average loss at step (17600/20001): 0.408117
+Average loss at step (17700/20001): 0.480824
+Average loss at step (17800/20001): 0.438323
+Average loss at step (17900/20001): 0.449510
+Average loss at step (18000/20001): 0.461092
+AUC score: 0.753805051116
+Model saved in ../model/model.ckpt
+Average loss at step (18100/20001): 0.417062
+Average loss at step (18200/20001): 0.470419
+Average loss at step (18300/20001): 0.418008
+Average loss at step (18400/20001): 0.472816
+Average loss at step (18500/20001): 0.455185
+AUC score: 0.753779652324
+Model saved in ../model/model.ckpt
+Average loss at step (18600/20001): 0.427618
+Average loss at step (18700/20001): 0.461335
+Average loss at step (18800/20001): 0.405546
+Average loss at step (18900/20001): 0.483393
+Average loss at step (19000/20001): 0.442219
+AUC score: 0.753647903676
+Model saved in ../model/model.ckpt
+Average loss at step (19100/20001): 0.446356
+Average loss at step (19200/20001): 0.459066
+Average loss at step (19300/20001): 0.416829
+Average loss at step (19400/20001): 0.471517
+Average loss at step (19500/20001): 0.431926
+AUC score: 0.753527113563
+Model saved in ../model/model.ckpt
+Average loss at step (19600/20001): 0.459479
+Average loss at step (19700/20001): 0.457740
+Average loss at step (19800/20001): 0.424340
+Average loss at step (19900/20001): 0.463058
+Average loss at step (20000/20001): 0.400866
+AUC score: 0.753436727993
+Model saved in ../model/model.ckpt
+reached the end of the file ../data/training_ASSISTment_all.csv
+reached the end of the file ../data/testing_ASSISTment_all.csv
+Average loss at step (0/20001): 0.689831
+Average loss at step (100/20001): 0.671337
+Average loss at step (200/20001): 0.614954
+Average loss at step (300/20001): 0.599523
+Average loss at step (400/20001): 0.617729
+Average loss at step (500/20001): 0.560097
+AUC score: 0.69361750764
+Model saved in ../model/model.ckpt
+Average loss at step (600/20001): 0.610938
+Average loss at step (700/20001): 0.541915
+Average loss at step (800/20001): 0.573793
+Average loss at step (900/20001): 0.562722
+Average loss at step (1000/20001): 0.509798
+AUC score: 0.719634673027
+Model saved in ../model/model.ckpt
+Average loss at step (1100/20001): 0.575121
+Average loss at step (1200/20001): 0.494321
+Average loss at step (1300/20001): 0.572163
+Average loss at step (1400/20001): 0.537881
+Average loss at step (1500/20001): 0.501266
+AUC score: 0.746919036432
+Model saved in ../model/model.ckpt
+Average loss at step (1600/20001): 0.556597
+Average loss at step (1700/20001): 0.477851
+Average loss at step (1800/20001): 0.572022
+Average loss at step (1900/20001): 0.509428
+Average loss at step (2000/20001): 0.523190
+AUC score: 0.752313657989
+Model saved in ../model/model.ckpt
+Average loss at step (2100/20001): 0.543623
+Average loss at step (2200/20001): 0.478393
+Average loss at step (2300/20001): 0.559004
+Average loss at step (2400/20001): 0.494899
+Average loss at step (2500/20001): 0.537094
+AUC score: 0.752642209169
+Model saved in ../model/model.ckpt
+Average loss at step (2600/20001): 0.531896
+Average loss at step (2700/20001): 0.482222
+Average loss at step (2800/20001): 0.551791
+Average loss at step (2900/20001): 0.463197
+Average loss at step (3000/20001): 0.561924
+AUC score: 0.755438792138
+Model saved in ../model/model.ckpt
+Average loss at step (3100/20001): 0.511699
+Average loss at step (3200/20001): 0.504705
+Average loss at step (3300/20001): 0.538068
+Average loss at step (3400/20001): 0.471979
+Average loss at step (3500/20001): 0.553187
+AUC score: 0.757364093053
+Model saved in ../model/model.ckpt
+Average loss at step (3600/20001): 0.500073
+Average loss at step (3700/20001): 0.518795
+Average loss at step (3800/20001): 0.529707
+Average loss at step (3900/20001): 0.476389
+Average loss at step (4000/20001): 0.549014
+AUC score: 0.758621581065
+Model saved in ../model/model.ckpt
+Average loss at step (4100/20001): 0.457520
+Average loss at step (4200/20001): 0.560743
+Average loss at step (4300/20001): 0.521842
+Average loss at step (4400/20001): 0.487361
+Average loss at step (4500/20001): 0.537292
+AUC score: 0.760631698293
+Model saved in ../model/model.ckpt
+Average loss at step (4600/20001): 0.467451
+Average loss at step (4700/20001): 0.554609
+Average loss at step (4800/20001): 0.498667
+Average loss at step (4900/20001): 0.513742
+Average loss at step (5000/20001): 0.533034
+AUC score: 0.762043620426
+Model saved in ../model/model.ckpt
+Average loss at step (5100/20001): 0.470236
+Average loss at step (5200/20001): 0.550412
+Average loss at step (5300/20001): 0.457181
+Average loss at step (5400/20001): 0.560890
+Average loss at step (5500/20001): 0.521678
+AUC score: 0.762178676553
+Model saved in ../model/model.ckpt
+Average loss at step (5600/20001): 0.482280
+Average loss at step (5700/20001): 0.540245
+Average loss at step (5800/20001): 0.464395
+Average loss at step (5900/20001): 0.557248
+Average loss at step (6000/20001): 0.500744
+AUC score: 0.761821714528
+Model saved in ../model/model.ckpt
+Average loss at step (6100/20001): 0.510636
+Average loss at step (6200/20001): 0.534962
+Average loss at step (6300/20001): 0.468283
+Average loss at step (6400/20001): 0.548512
+Average loss at step (6500/20001): 0.469468
+AUC score: 0.761787634543
+Model saved in ../model/model.ckpt
+Average loss at step (6600/20001): 0.550645
+Average loss at step (6700/20001): 0.522466
+Average loss at step (6800/20001): 0.477504
+Average loss at step (6900/20001): 0.543940
+Average loss at step (7000/20001): 0.461216
+AUC score: 0.762123128014
+Model saved in ../model/model.ckpt
+Average loss at step (7100/20001): 0.558758
+Average loss at step (7200/20001): 0.499383
+Average loss at step (7300/20001): 0.508164
+Average loss at step (7400/20001): 0.536950
+Average loss at step (7500/20001): 0.466568
+AUC score: 0.762632107383
+Model saved in ../model/model.ckpt
+Average loss at step (7600/20001): 0.551554
+Average loss at step (7700/20001): 0.483884
+Average loss at step (7800/20001): 0.532310
+Average loss at step (7900/20001): 0.525714
+Average loss at step (8000/20001): 0.474693
+AUC score: 0.763251372595
+Model saved in ../model/model.ckpt
+Average loss at step (8100/20001): 0.547401
+Average loss at step (8200/20001): 0.457718
+Average loss at step (8300/20001): 0.558299
+Average loss at step (8400/20001): 0.505767
+Average loss at step (8500/20001): 0.502577
+AUC score: 0.763708673553
+Model saved in ../model/model.ckpt
+Average loss at step (8600/20001): 0.535722
+Average loss at step (8700/20001): 0.468080
+Average loss at step (8800/20001): 0.550878
+Average loss at step (8900/20001): 0.497311
+Average loss at step (9000/20001): 0.516051
+AUC score: 0.764022266609
+Model saved in ../model/model.ckpt
+Average loss at step (9100/20001): 0.529092
+Average loss at step (9200/20001): 0.472965
+Average loss at step (9300/20001): 0.547950
+Average loss at step (9400/20001): 0.455717
+Average loss at step (9500/20001): 0.558882
+AUC score: 0.764191778218
+Model saved in ../model/model.ckpt
+Average loss at step (9600/20001): 0.522166
+Average loss at step (9700/20001): 0.484688
+Average loss at step (9800/20001): 0.536400
+Average loss at step (9900/20001): 0.466118
+Average loss at step (10000/20001): 0.552413
+AUC score: 0.764388085849
+Model saved in ../model/model.ckpt
+Average loss at step (10100/20001): 0.500491
+Average loss at step (10200/20001): 0.512196
+Average loss at step (10300/20001): 0.532748
+Average loss at step (10400/20001): 0.468773
+Average loss at step (10500/20001): 0.550082
+AUC score: 0.76438403523
+Model saved in ../model/model.ckpt
+Average loss at step (10600/20001): 0.455973
+Average loss at step (10700/20001): 0.559380
+Average loss at step (10800/20001): 0.521218
+Average loss at step (10900/20001): 0.481857
+Average loss at step (11000/20001): 0.540358
+AUC score: 0.764439984871
+Model saved in ../model/model.ckpt
+Average loss at step (11100/20001): 0.464278
+Average loss at step (11200/20001): 0.555038
+Average loss at step (11300/20001): 0.500223
+Average loss at step (11400/20001): 0.510240
+Average loss at step (11500/20001): 0.533963
+AUC score: 0.764157291295
+Model saved in ../model/model.ckpt
+Average loss at step (11600/20001): 0.467092
+Average loss at step (11700/20001): 0.549290
+Average loss at step (11800/20001): 0.465230
+Average loss at step (11900/20001): 0.552381
+Average loss at step (12000/20001): 0.521141
+AUC score: 0.76354300097
+Model saved in ../model/model.ckpt
+Average loss at step (12100/20001): 0.478512
+Average loss at step (12200/20001): 0.543569
+Average loss at step (12300/20001): 0.460350
+Average loss at step (12400/20001): 0.557235
+Average loss at step (12500/20001): 0.499456
+AUC score: 0.762979670509
+Model saved in ../model/model.ckpt
+Average loss at step (12600/20001): 0.507459
+Average loss at step (12700/20001): 0.536741
+Average loss at step (12800/20001): 0.464831
+Average loss at step (12900/20001): 0.551184
+Average loss at step (13000/20001): 0.480334
+AUC score: 0.762839314688
+Model saved in ../model/model.ckpt
+Average loss at step (13100/20001): 0.534313
+Average loss at step (13200/20001): 0.524516
+Average loss at step (13300/20001): 0.474841
+Average loss at step (13400/20001): 0.545261
+Average loss at step (13500/20001): 0.458694
+AUC score: 0.762837684777
+Model saved in ../model/model.ckpt
+Average loss at step (13600/20001): 0.557142
+Average loss at step (13700/20001): 0.506048
+Average loss at step (13800/20001): 0.501163
+Average loss at step (13900/20001): 0.535467
+Average loss at step (14000/20001): 0.467135
+AUC score: 0.763213471418
+Model saved in ../model/model.ckpt
+Average loss at step (14100/20001): 0.550650
+Average loss at step (14200/20001): 0.495637
+Average loss at step (14300/20001): 0.516657
+Average loss at step (14400/20001): 0.528650
+Average loss at step (14500/20001): 0.473375
+AUC score: 0.763762519633
+Model saved in ../model/model.ckpt
+Average loss at step (14600/20001): 0.546856
+Average loss at step (14700/20001): 0.454904
+Average loss at step (14800/20001): 0.558836
+Average loss at step (14900/20001): 0.521318
+Average loss at step (15000/20001): 0.484002
+AUC score: 0.764141658666
+Model saved in ../model/model.ckpt
+Average loss at step (15100/20001): 0.535974
+Average loss at step (15200/20001): 0.465047
+Average loss at step (15300/20001): 0.551956
+Average loss at step (15400/20001): 0.500211
+Average loss at step (15500/20001): 0.512642
+AUC score: 0.764388137413
+Model saved in ../model/model.ckpt
+Average loss at step (15600/20001): 0.531727
+Average loss at step (15700/20001): 0.467884
+Average loss at step (15800/20001): 0.548689
+Average loss at step (15900/20001): 0.455597
+Average loss at step (16000/20001): 0.558484
+AUC score: 0.764592057525
+Model saved in ../model/model.ckpt
+Average loss at step (16100/20001): 0.521522
+Average loss at step (16200/20001): 0.480385
+Average loss at step (16300/20001): 0.538882
+Average loss at step (16400/20001): 0.464039
+Average loss at step (16500/20001): 0.554727
+AUC score: 0.764872936372
+Model saved in ../model/model.ckpt
+Average loss at step (16600/20001): 0.499221
+Average loss at step (16700/20001): 0.509878
+Average loss at step (16800/20001): 0.533049
+Average loss at step (16900/20001): 0.466782
+Average loss at step (17000/20001): 0.548376
+AUC score: 0.764795453926
+Model saved in ../model/model.ckpt
+Average loss at step (17100/20001): 0.462124
+Average loss at step (17200/20001): 0.553958
+Average loss at step (17300/20001): 0.521997
+Average loss at step (17400/20001): 0.477090
+Average loss at step (17500/20001): 0.543535
+AUC score: 0.764844040265
+Model saved in ../model/model.ckpt
+Average loss at step (17600/20001): 0.459390
+Average loss at step (17700/20001): 0.557081
+Average loss at step (17800/20001): 0.499076
+Average loss at step (17900/20001): 0.506978
+Average loss at step (18000/20001): 0.536059
+AUC score: 0.764621078674
+Model saved in ../model/model.ckpt
+Average loss at step (18100/20001): 0.463975
+Average loss at step (18200/20001): 0.550936
+Average loss at step (18300/20001): 0.478300
+Average loss at step (18400/20001): 0.535920
+Average loss at step (18500/20001): 0.525631
+AUC score: 0.764269766435
+Model saved in ../model/model.ckpt
+Average loss at step (18600/20001): 0.473788
+Average loss at step (18700/20001): 0.545045
+Average loss at step (18800/20001): 0.458131
+Average loss at step (18900/20001): 0.555849
+Average loss at step (19000/20001): 0.504291
+AUC score: 0.763572444153
+Model saved in ../model/model.ckpt
+Average loss at step (19100/20001): 0.502830
+Average loss at step (19200/20001): 0.535098
+Average loss at step (19300/20001): 0.465187
+Average loss at step (19400/20001): 0.550487
+Average loss at step (19500/20001): 0.493135
+AUC score: 0.763392198129
+Model saved in ../model/model.ckpt
+Average loss at step (19600/20001): 0.519237
+Average loss at step (19700/20001): 0.528230
+Average loss at step (19800/20001): 0.471206
+Average loss at step (19900/20001): 0.546328
+Average loss at step (20000/20001): 0.454829
+AUC score: 0.763324687251
+Model saved in ../model/model.ckpt
